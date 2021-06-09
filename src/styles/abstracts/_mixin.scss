@@ -1,0 +1,17 @@
+@mixin input-img($icon) {
+  padding-left: 40px; 
+  background: white url("/src/icons/#{$icon}.svg") no-repeat left 10px center / 20px;
+}
+
+@mixin width-height($width,$height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($position,$top: null,$right: null,$bottom: null,$left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;  
+}

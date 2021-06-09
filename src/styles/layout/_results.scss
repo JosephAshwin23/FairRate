@@ -1,0 +1,130 @@
+.results {
+  @extend %display-none;
+  @extend %align-center;
+    width: 100%;
+
+  h3 {
+    margin-top: 10px;
+  }
+  
+
+  .filter {
+    display: flex;
+    width: 75%;
+    margin: 50px auto 0 auto;
+
+    .dropdown {
+      &:nth-child(1),&:nth-child(2) {
+        margin-right: 15px;
+      }
+
+      &:last-child {
+        margin-left: auto
+      }
+    }
+  }
+
+  table {
+    @extend %light-grey-border;
+    width: 75%;
+    margin: auto; 
+    margin: 20px auto 0 auto;
+    border-spacing: 0;
+    border-bottom: none;
+
+    thead {
+      background: $pale-blue;
+
+      .scroll-icon {
+        left: 0;
+        width: 8px;
+      }
+    }
+
+    th {
+      position: relative;
+      width: calc(100% / 6);
+      text-align: initial;
+      font-weight: 400;
+      font-size: 11px;
+      padding: 15px 15px;
+
+      span {
+        @extend %align-center;
+        display: inline-block;
+        width: 14.72px;
+        color: white;
+        border-radius: 100%;
+        background: $color-btn-primary;
+        margin-left: 5px;
+      }
+    }
+
+    tbody {
+      background-color: white;
+
+      tr {
+        position: relative;
+        & ~ tr {
+          @extend %separating-line;
+        }
+      }
+
+      td {
+        width: calc(100% / 6);
+        padding: 15px 0;
+
+        p {
+          color: $color-txt-light;
+        }
+
+        h2 {
+          color: $color-txt-darkblue;
+          font-weight: 100;
+        }
+
+        h5 {
+          margin-bottom: 10px;
+        }
+
+        & ~ td {
+          text-align: initial;
+        }
+      }
+
+      .lender-img {
+        @include width-height(100px,60px);
+        object-fit: contain;
+      }
+    }
+  }
+
+  footer {   
+    @extend %light-grey-border;
+    width: 75%;
+    margin: auto; 
+    border-top: none;
+    padding: 20px 0;
+    background: white;
+
+    a {
+      @extend %cursor-pointer;
+      @extend %light-grey-border;
+      background: $pale-grey;
+      padding: 10px 60px;
+      display: inline-block;
+
+      &:focus {
+        background: linear-gradient(to right, white, $pale-grey);
+      }
+
+      & + a {
+        margin-left: -5px;
+      }
+
+      svg {
+        vertical-align: middle;
+      }
+    }
+  }
+}

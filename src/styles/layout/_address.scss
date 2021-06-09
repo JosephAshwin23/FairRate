@@ -1,0 +1,98 @@
+.address {
+  @extend %display-none;
+  .wrapper {
+    @extend %flex;
+    width: 950px;
+  }
+
+  .left-side {
+    width: 400px;
+
+    
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 40px;
+      color: $color-txt-secondary;
+    }
+
+    input {
+      @include input-img(calendar);
+      width: 380px;
+    }
+  }
+
+  .right-side {
+    width: 400px;
+
+    input {
+      margin-bottom: 20px;
+      &:nth-child(1) {
+        @include input-img(location);
+      }
+
+      &:nth-child(2) {
+        @include input-img(mail);
+        display: block;
+      }
+    }
+
+    .checkbox-container {
+      @include width-height(380px, 40px);
+      @extend %grey-border;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 30px;
+      }
+    }
+
+    .dropdown {
+      margin-bottom: 200px;
+    }
+
+    .select-alarm {
+      @extend %flex;
+    }
+
+    .checkbox-square-container {
+      @include width-height(180px, 166px);
+      @extend %grey-border;
+      @extend %position-relative;
+      padding: 15px;
+      display: flex;
+      align-items: flex-end;
+
+      .checkbox-icon {
+        @include position(absolute, 35px, 0, null, 0);
+        margin: auto;
+      }
+
+      &:hover .checkbox-icon {
+        fill: $color-btn-primary;
+      }
+
+      &:first-child {
+        margin-right: 14px;
+      }
+    }
+
+    .checkbox-square-container,
+    .checkbox-container {
+      &:hover {
+        box-shadow: 0 0 0 1pt $color-btn-primary;
+        border-color: $color-btn-primary;
+      }
+    }
+
+    footer {
+      margin-top: 50px;
+      @extend %flex;
+    }
+  }
+}

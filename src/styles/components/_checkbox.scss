@@ -1,0 +1,76 @@
+// checkbox primary
+
+.checkbox-primary {
+  @include width-height(25px);
+  @extend %position-relative;
+  @extend %checkbox-input;
+  display: inline-block;
+
+  .tick {
+    @extend %checkbox-tick;
+  }
+
+  .checkbox-text {
+    @extend %checkbox-text;
+    font-size: 15px;
+  }
+
+  input:checked+.tick {
+    background: url(/src/icons/tick.svg) center top 6px / 60% no-repeat;
+    border-color: $color-btn-primary;
+  }
+}
+
+// checkbox secondary
+
+.checkbox-secondary {
+  @include width-height(20px);
+  @extend %position-relative;
+  @extend %checkbox-input;
+  display: inline-block;
+
+  .tick {
+    @extend %checkbox-tick;
+    border-width: 2px;
+  }
+
+  .checkbox-text {
+    @extend %checkbox-text;
+    font-size: 12px;
+  }
+
+  input:checked+.tick {
+    background: url(/src/icons/tick.svg) center top 4.5px / 60% no-repeat;
+  }
+}
+
+// checkbox-tertiary
+
+.checkbox-tertiary {
+  @include width-height(15px);
+  @extend %position-relative;
+  @extend %checkbox-input;
+  border-radius: 3px;
+  display: inline-block;
+
+  .tick {
+    @extend %checkbox-tick;
+    border: none;
+  }
+
+  .checkbox-text {
+    @extend %checkbox-text;
+    font-size: 10px;
+    margin-left: 5px;
+    top: 8px;
+  }
+
+  input:checked+.tick {
+    background: url(/src/icons/check-white.svg) left 2px top / 80% no-repeat;
+  }
+}
+
+
+
+
+

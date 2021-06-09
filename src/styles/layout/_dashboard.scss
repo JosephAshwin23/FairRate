@@ -1,0 +1,35 @@
+.dashboard {
+    @extend %display-none;
+    width: 1050px;   
+    .wrapper {
+        @extend %flex;
+        margin-top: 30px;
+    }
+    &-items {      
+       background: white; 
+       width: 500px;
+       border-radius: 3px;
+       padding: 25px;
+       display: flex;
+
+       &:nth-child(2) {
+           background: transparent;
+           border: 2px dashed $color-input-border;
+       }
+       
+       h2 {
+           font-weight: 400;
+           font-size: 24px;
+           margin-bottom: 5px;
+       }
+
+       p {
+           margin-bottom: 5px;
+       }
+
+
+       .progress-circle {           
+           margin-right: 30px;
+       }
+    }
+}

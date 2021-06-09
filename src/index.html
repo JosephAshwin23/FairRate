@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fair Rate</title>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="top">
+        <svg
+          class="side-menu"
+          xmlns="http://www.w3.org/2000/svg"
+          width="21"
+          height="20"
+          viewBox="0 0 24 23"
+        >
+          <path
+            fill="#919EAB"
+            fill-rule="evenodd"
+            d="M15 2c0 .536-.06.688 0 1-.304-.063-.451 0-1 0H1c-.549 0-.696-.063-1 0 .06-.312 0-.464 0-1V1C0 .464.06.312 0 0c.304.063.451 0 1 0h13c.549 0 .696.063 1 0-.06.312 0 .464 0 1v1zM1 10c-.536 0-.688-.063-1 0 .063-.312 0-.464 0-1V8c0-.536.063-.688 0-1 .312.063.464 0 1 0h22c.536 0 .688.063 1 0-.063.312 0 .464 0 1v1c0 .536-.063.688 0 1-.312-.063-.464 0-1 0H1zm0 13c-.536 0-.688-.063-1 0 .063-.312 0-.464 0-1v-1c0-.536.063-.688 0-1 .312.063.464 0 1 0h22c.536 0 .688.063 1 0-.063.312 0 .464 0 1v1c0 .536-.063.688 0 1-.312-.063-.464 0-1 0H1zm13-10c.549 0 .696.063 1 0-.06.312 0 .464 0 1v1c0 .536-.06.688 0 1-.304-.063-.451 0-1 0H1c-.549 0-.696-.063-1 0 .06-.312 0-.464 0-1v-1c0-.536.06-.688 0-1 .304.063.451 0 1 0h13z"
+          />
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="logo"
+          width="185"
+          height="39"
+          viewBox="0 0 185 39"
+        >
+          <g fill="none" fill-rule="evenodd">
+            <text
+              fill="#454F5B"
+              font-family="Open Sans, sans-serif"
+              font-size="24"
+              font-weight="600"
+            >
+              <tspan x="87" y="29">FairRate</tspan>
+            </text>
+            <path fill="#4AD5F6" d="M27 6l27 33H0L27 6zm-4 27h8V22h-8v11z" />
+            <path fill="#95CDB1" d="M54 0L40 16h27L54 0" />
+            <path fill="#FFC48B" d="M69 18L55 34h27L69 18" />
+          </g>
+        </svg>
+
+        <ul>
+          <li tabindex="1">Home</li>
+          <li class="focus" tabindex="1">Application</li>
+          <li tabindex="1">Documents</li>
+        </ul>      
+        
+      <div class="user-login">    
+        <svg class='notification-icon' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="23" height="28" x="0" y="0" viewBox="0 0 510 510" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g transform="matrix(1,0,0,1,2.842170943040401e-14,2.842170943040401e-14)">
+          <g xmlns="http://www.w3.org/2000/svg">
+            <g id="notifications-none">
+              <path d="M255,510c28.05,0,51-22.95,51-51H204C204,487.05,226.95,510,255,510z M420.75,357V216.75    c0-79.05-53.55-142.8-127.5-160.65V38.25C293.25,17.85,275.4,0,255,0c-20.4,0-38.25,17.85-38.25,38.25V56.1    c-73.95,17.85-127.5,81.6-127.5,160.65V357l-51,51v25.5h433.5V408L420.75,357z M369.75,382.5h-229.5V216.75    C140.25,153,191.25,102,255,102s114.75,51,114.75,114.75V382.5z" fill="#919eab" data-original="#000000" style="" class=""/>
+            </g>
+          </g>      
+        </g>
+        </svg>   
+       
+        <img class="user-img" src="https://img.flaticon.com/icons/png/512/149/149071.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" alt=""> 
+        <p>Log In </p>     
+        <img class="down-arrow" src="./icons/down-arrow.svg" alt="">  
+      </div>
+     
+      </div>
+
+      <div id="second-navbar" class="bottom none">
+        <div class="wrapper">
+          <div class="progress-circle over50 p66">
+            <span>60%</span>
+            <div class="left-half-clipper">
+               <div class="first50-bar"></div>
+               <div class="value-bar"></div>
+            </div>
+         </div>
+          <div>
+            <h1>Your Mortgage is 60% Complete</h1>
+            <h3>Great Start Adrian! Please complete remaining steps!</h3>
+          </div>
+          <button class="btn-tertiary-outline ">Talk to us</button>
+        </div>        
+        
+      </div>
+    </header>
+
+    <main>
+      <section class="choose-name show">
+      <h1>I'll get you an awesome price <br> in seconds. Ready to go?</h1>
+        <form action="">
+          <input type="text" id="first-name"  autocomplete="nope" class=" input-md"  placeholder="First Name">
+          <input type="text" id="last-name"  autocomplete="nope" class=" input-md" placeholder="Last Name">
+          <button type="button" class="btn-primary btn-lg">next</button>
+        </form>
+      <!-- 
+        <div class="dropdown dropdown-lg">
+          <p id="dropdown-text" class="dropdown-text">I don’t know</p>
+          <img tabindex="1"
+            id="scroll"
+            class="scroll-icon"
+            src="../src/icons/updown.svg"
+            alt=""
+          />
+          <div class="dropdown-list">
+            <ul>
+              <li>This month</li>
+              <li>Next Month</li>
+              <li>December 2018</li>
+              <li>January 2019</li>
+              <li>I don't know</li>
+              <li>Later</li>
+            </ul>
+          </div>
+        </div> -->
+                 
+      
+     </section>
+
+       <section class="address">
+        <div class="wrapper">
+          <div class="left-side">
+            <h1>Fill the form on the right</h1>
+            <p>
+              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+              nibh.
+            </p>
+            <label class="input-label" for="datepicker">Date of birth</label>  
+            <input type="text" id="datepicker">         
+           
+          </div>
+
+          <div class="right-side">
+            <form action="" >
+              <input
+              type="text"              
+              class="input-lg"              
+              placeholder="Enter the exact address"
+              id="address"
+              
+            />
+            <input type="email"   id="email" class="input-lg" placeholder="Email Address" />
+
+            <div class="house-type">
+              <div class="checkbox-container">
+                <label class="checkbox-primary">
+                  <input type="checkbox" />
+                  <span class="tick"></span>
+                  <span class="checkbox-text">Condo</span>
+                </label>
+              </div>
+              <div class="checkbox-container">
+                <label class="checkbox-primary">
+                  <input type="checkbox" />
+                  <span class="tick"></span>
+                  <span class="checkbox-text">Co-op</span>
+                </label>
+              </div>
+              <div class="checkbox-container">
+                <label class="checkbox-primary">
+                  <input type="checkbox" />
+                  <span class="tick"></span>
+                  <span class="checkbox-text">House</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="dropdown dropdown-lg">
+              <p id="dropdown-text" class="dropdown-text">I don’t know</p>
+              <img tabindex="1"
+                id="scroll"
+                class="scroll-icon"
+                src="../src/icons/updown.svg"
+                alt=""
+              />
+              <div class="dropdown-list">
+                <ul>
+                  <li>This month</li>
+                  <li>Next Month</li>
+                  <li>December 2018</li>
+                  <li>January 2019</li>
+                  <li>I don't know</li>
+                  <li>Later</li>
+                </ul>
+              </div>
+            </div>
+
+           
+
+            <div class="select-alarm">
+              <div class="checkbox-square-container">
+                <svg
+                  class="checkbox-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="42"
+                  viewBox="0 0 46 48"
+                >
+                  <g>
+                    <path
+                      d="M21.353 27.266h3.294a.775.775 0 0 0 .771-.778.775.775 0 0 0-.771-.777h-3.294a.775.775 0 0 0-.771.777c0 .43.345.778.771.778z"
+                    />
+                    <path
+                      d="M42.843 35.2a.78.78 0 0 0-.068-.031l-5.847-2.267a2.187 2.187 0 0 1-1.288-1.358l-.234-.708c1.309-1.894 1.813-3.753.585-5.609-.556-.84-1.24-1.445-2.083-1.844.367-1.373.566-2.838.566-4.36v-.051h.052c.88 0 1.595-.72 1.595-1.607v-1.659a1.61 1.61 0 0 0-.823-1.405v-1.912C35.298 5.558 29.78 0 23 0c-6.78 0-12.298 5.558-12.298 12.389V14.3a1.61 1.61 0 0 0-.823 1.405v1.659c0 .886.716 1.607 1.595 1.607h.052v.052c0 1.521.2 2.986.566 4.36-.843.398-1.527 1.003-2.083 1.843-1.228 1.856-.724 3.715.585 5.609l-.234.708a2.186 2.186 0 0 1-1.288 1.358L3.225 35.17a.737.737 0 0 0-.068.03A5.727 5.727 0 0 0 0 40.346v5.218A2.43 2.43 0 0 0 2.418 48h41.164A2.43 2.43 0 0 0 46 45.564v-5.218a5.727 5.727 0 0 0-3.157-5.147zm-8.136-9.11c.45.68.818 1.698-.344 3.536-.604.954-1.51 1.968-2.547 3.03a.876.876 0 0 1-.635-.847v-2.833a.787.787 0 0 0-.007-.104 14.535 14.535 0 0 0 2.254-3.99c.506.276.92.666 1.279 1.208zm-21.293-3.8h.19c.544 0 1.055.213 1.442.602a3.543 3.543 0 0 0 2.53 1.056h10.847c.956 0 1.855-.375 2.533-1.058.385-.387.896-.6 1.44-.6h.19c-1.145 5.309-5.008 9.226-9.586 9.226s-8.441-3.917-9.586-9.227zm2.266 11.217a2.437 2.437 0 0 0 .682-1.698v-1.333c1.875 1.634 4.167 2.595 6.638 2.595s4.763-.961 6.638-2.595v1.333c0 .655.255 1.256.682 1.697-2.245 1.413-4.764 2.157-7.32 2.157s-5.075-.744-7.32-2.156zM23 37.218a14.95 14.95 0 0 0 5.169-.93c-2.107 2.157-4.113 4.498-5.169 7.12-1.056-2.622-3.062-4.963-5.169-7.12 1.664.612 3.407.93 5.169.93zm11.577-19.853a.052.052 0 0 1-.051.052h-1.698v-1.763h1.698c.028 0 .051.024.051.052v1.659zm-5.866.052v-1.763h2.573v1.763h-2.573zm-4.94 0v-1.763h3.397v1.763h-3.396zm-4.939 0v-1.763h3.396v1.763h-3.396zm-4.116 0v-1.763h2.573v1.763h-2.573zm14.922-3.318h-3.396v-1.71c0-3.155-.263-6.128-.74-8.374a14.478 14.478 0 0 0-.547-1.973c.973.497 1.874 1.364 2.635 2.557 1.32 2.07 2.048 4.836 2.048 7.79v1.71zm-8.336 0v-1.71c0-2.814.218-5.512.615-7.595.4-2.095.86-2.944 1.083-3.186.222.242.684 1.091 1.083 3.186.397 2.083.615 4.78.615 7.595v1.71h-3.396zm-.257-12.056c-.2.544-.382 1.2-.546 1.973-.478 2.245-.74 5.218-.74 8.373v1.71h-3.397v-1.71c0-2.954.728-5.72 2.048-7.79.761-1.193 1.662-2.06 2.635-2.556zm12.709 10.346v1.71H31.18v-1.71c0-3.249-.814-6.314-2.292-8.631-.17-.267-.348-.52-.531-.76a10.855 10.855 0 0 1 5.396 9.39zM17.642 2.998c-.183.24-.36.493-.53.76-1.479 2.317-2.293 5.382-2.293 8.63V14.1h-2.573v-1.71c0-4.01 2.174-7.518 5.396-9.391zm-6.22 14.367v-1.659c0-.028.024-.052.052-.052h1.698v1.763h-1.698a.052.052 0 0 1-.051-.052zm6.692 1.607l-.002.052v.83c0 .429.345.777.772.777a.775.775 0 0 0 .771-.778v-.83l-.002-.051h6.694l-.002.052v.83c0 .429.345.777.771.777a.775.775 0 0 0 .772-.778v-.83l-.002-.051h5.045v.052c0 .58-.033 1.15-.094 1.71h-.441c-.956 0-1.855.375-2.533 1.059-.385.387-.896.6-1.44.6H17.577a2.017 2.017 0 0 1-1.442-.603 3.543 3.543 0 0 0-2.53-1.056h-.442c-.061-.56-.094-1.13-.094-1.71v-.052h5.045zm-6.82 7.118c.358-.542.772-.932 1.279-1.208a14.535 14.535 0 0 0 2.254 3.99.787.787 0 0 0-.008.104v2.833a.876.876 0 0 1-.634.847c-1.037-1.061-1.944-2.076-2.548-3.03-1.162-1.838-.794-2.855-.344-3.536zm-9.75 19.474v-5.218a4.18 4.18 0 0 1 2.272-3.74l5.81-2.252a3.727 3.727 0 0 0 2.105-2.07c.91 1.05 1.992 2.114 3.093 3.195 3.267 3.21 6.944 6.825 7.364 10.966H9.776v-2.54a.775.775 0 0 0-.772-.777.775.775 0 0 0-.771.777v2.54H2.418a.879.879 0 0 1-.874-.881zm42.912 0a.879.879 0 0 1-.874.88h-5.815v-2.539a.775.775 0 0 0-.771-.778.775.775 0 0 0-.772.778v2.54H23.812c.42-4.141 4.096-7.755 7.364-10.966 1.1-1.081 2.183-2.144 3.093-3.195a3.727 3.727 0 0 0 2.105 2.07l5.81 2.252a4.18 4.18 0 0 1 2.272 3.74v5.218z"
+                    />
+                  </g>
+                </svg>
+                <label class="checkbox-primary">
+                  <input type="checkbox" />
+                  <span class="tick"></span>
+                  <span class="checkbox-text">Burglar Alarm</span>
+                </label>
+              </div>
+              <div class="checkbox-square-container">
+                <svg
+                  class="checkbox-icon"
+                  height="42"
+                  viewBox="-78 0 512 512"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m178.164062 512c-98.242187 0-178.164062-80.367188-178.164062-179.152344 0-43.050781 14.664062-72.320312 31.648438-106.210937 9.425781-18.820313 19.175781-38.277344 28.179687-63.105469l9.367187-25.832031c13.8125 3.382812 9.132813 2.238281 22.941407 5.621093l-3.632813 27.238282c-2.972656 22.257812 1.089844 47.503906 11.140625 69.261718 4.261719 9.230469 9.40625 17.421876 15.117188 24.230469-1.980469-36.140625 1.722656-70.976562 11.074219-103.9375 9.804687-34.550781 25.535156-66.40625 46.757812-94.6875 26.414062-35.191406 56.75-58.175781 70.816406-60.066406l39.867188-5.359375-26.828125 29.976562c-12.1875 13.613282-18.898438 31.1875-18.898438 49.484376 0 35.367187 21.695313 60.464843 46.8125 89.527343 16.105469 18.628907 34.355469 39.746094 48.179688 65.6875 16.003906 30.03125 23.78125 62.140625 23.78125 98.171875 0 98.785156-79.921875 179.152344-178.160157 179.152344zm-114.269531-283.5c-1.9375 3.925781-3.84375 7.730469-5.699219 11.4375-15.925781 31.78125-28.5 56.882812-28.5 92.910156 0 82.410156 66.601563 149.457032 148.46875 149.457032 81.863282 0 148.46875-67.046876 148.46875-149.457032 0-69.550781-32.910156-107.621094-64.734374-144.441406-27.792969-32.152344-54.042969-62.523438-54.042969-108.945312 0-3.703126.195312-7.382813.585937-11.03125-8.375 9.476562-17.167968 20.964843-25.480468 34.523437-23.464844 38.28125-48.636719 102.519531-35.273438 191.183594l3.90625 25.945312-24.253906-10.007812c-22.273438-9.195313-41.683594-29.722657-54.65625-57.804688-3.554688-7.699219-6.492188-15.664062-8.789063-23.769531zm0 0"
+                  />
+                </svg>
+                <label class="checkbox-primary">
+                  <input type="checkbox" />
+                  <span class="tick"></span>
+                  <span class="checkbox-text">Burglar Alarm</span>
+                </label>
+              </div>
+            </div>
+
+            <footer>
+              <button type="button" class="btn-secondary btn-lg">back</button>
+              <button type="button" class="btn-primary btn-lg">next</button>
+            </footer>
+            </form>
+           
+          </div>
+        </div>
+      </section> 
+
+       <section class="upload">
+        <h1>
+          Few more step ahead <br />
+          upload your ID Document 👆
+        </h1>
+        <div class="upload-tab">
+          <a class="focus">Photo Indentification</a>
+          <a>Proof of Address</a>
+        </div>
+        <div class="identification">
+          <h4>Upload photo Indentification</h4>
+          <div class="wrapper">
+            <div id='drag-drop' class="drag-drop">
+              <div class="drop-effect">
+                <h2>Drop Here</h2>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="82"
+                height="70"
+                viewBox="0 0 92 80"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <g fill-rule="nonzero" opacity=".357">
+                    <path
+                      stroke="#979797"
+                      stroke-dasharray="1,1"
+                      stroke-width="2"
+                      d="M82.946 5.853L68.457 1.97c-1.992-.534-4.046.686-4.587 2.704l-7.886 29.36c-.541 2.018.628 4.102 2.62 4.636l21.752 5.828c1.992.534 4.064-.681 4.605-2.7l5.901-22.023-7.916-13.923zM78 17.659L80.588 8l7.071 12.247L78 17.66z"
+                    />
+                    <path
+                      fill="#637381"
+                      d="M73.045 28.34c-.36.571-.816 1.163-1.39 1.794-.254.275-.52.53-.655.764l.101-.01a16.367 16.367 0 0 1 3.016-.03 2.98 2.98 0 0 1-.272-.363c-.39-.564-.659-1.305-.8-2.155zm5.14 5.06c-.206.135-.514.162-.925.052-.71-.19-1.813-.716-2.62-1.443-1.655-.253-2.91-.359-3.955-.308-.052.006-.113.01-.186.02-1.69 1.671-2.788 2.329-3.545 2.126a.868.868 0 0 1-.384-.213l-.371-.41-.015-.055a.879.879 0 0 1 .088-.517c.236-.468.979-1.11 2.289-1.51.212-.084.533-.158.954-.236.411-.41.863-.9 1.349-1.442.734-.835 1.289-1.708 1.743-2.468l.003-.01c-.043-1.223-.066-1.96.613-3.111.18-.333.585-.615.931-.522l.225.06c.215.057.4.187.51.377.452.782-.242 2.21-.883 3.37-.034.051-.056.095-.073.121.091 1.157.396 2.15.855 2.794.193.252.414.511.668.76.433.066.84.155 1.223.258 1.16.31 1.806.704 1.959 1.216a.779.779 0 0 1-.026.544.935.935 0 0 1-.427.547zm-1.163-.565c-.061-.12-.345-.455-1.563-.781-.06-.017-.122-.033-.226.043.552.479 1.121.828 1.521.935.061.017.116.02.17.025l.036.01c.048-.008.077-.01.112-.105-.01-.034-.017-.077-.05-.127zm-7.573-1.317a5.006 5.006 0 0 0-.628.152c-.98.41-1.665.91-1.821 1.262.553-.007 1.398-.464 2.45-1.414zm3.731-5.538l.058-.023c.144-.266.24-.508.35-.688l.067-.135c.233-.481.283-.745.176-1.002l-.133-.084a1.157 1.157 0 0 0-.096.089c-.265.33-.43.982-.422 1.843z"
+                    />
+                  </g>
+                  <path d="M-11 23h64v64h-64z" />
+                  <path
+                    fill="#919EAB"
+                    fill-rule="nonzero"
+                    d="M26.875 27h-21.5C2.419 27 .027 29.385.027 32.3L0 74.7C0 77.615 2.392 80 5.348 80h32.277C40.581 80 43 77.615 43 74.7V42.9L26.875 27zM32 64.125h-7.875V72h-5.25v-7.875H11v-5.25h7.875V51h5.25v7.875H32v5.25zM24 46V31l15 15H24z"
+                  />
+                </g>
+              </svg>
+              <h4>
+                Drag files here to upload or 
+                <label class="file-label" for="file-upload">Select a file</label>
+                <input type="file" id="file-upload" name="choose-file" > 
+                select a file</a> from
+                your device
+              </h4>
+              <p>JPG, PNG or PDF only, maximum file size - 5MB</p>
+            </div>
+
+            <div class="instructions">
+              <p>YOUR DOCUMENT MUST BE:</p>
+              <ul>
+                <li>A Governent issued</li>
+                <ul>
+                  <li>Passport</li>
+                  <li>Driver's License</li>
+                  <li>National ID Card</li>
+                </ul>
+              </ul>
+              <ul>
+                <li>Whithin it’s expiry date</li>
+              </ul>
+              <a href="javascript:void(0);">See an example image</a>
+            </div>
+          </div>
+
+          <div id="upload-files" class="upload-files">            
+          </div>
+        </div>
+
+        <footer>
+          <button class="btn-secondary btn-lg">back</button>
+          <button class="btn-primary btn-lg">next</button>
+        </footer>
+      </section> 
+
+       <section class="results ">
+      <h1>Your fairest results</h1>
+      <h3>16 Results for 30 years xied in 64117</h3>
+      <div class="filter">
+        <div class="dropdown dropdown-md">
+          <p class="dropdown-text">15 Years</p>
+          <img id="scroll" tabindex="1" class="scroll-icon" src="../src/icons/updown.svg" alt="">
+          <div  class="dropdown-list">
+            <ul>
+              <li>20 Years</li>
+              <li>25 Years</li>
+              <li>30 Years</li>
+              <li>40 Years</li>
+           
+            
+            </ul>
+          </div>
+
+        </div>
+        <div class="dropdown dropdown-md">
+          <p class="dropdown-text">Fixed Price</p>
+          <img id="scroll" tabindex="1" class="scroll-icon" src="../src/icons/updown.svg" alt="">
+          <div  class="dropdown-list">
+            <ul>
+              <li>variable price</li>
+              <li>Lowest Price</li>
+              <li>Highest Price</li>             
+              <li>Highest Price</li>             
+            </ul>
+          </div>
+        </div>
+
+        <button class="btn-success btn-md">Filter Results</button>
+
+        <div class="dropdown dropdown-md">
+          <p class="dropdown-text">Sort by: Fairest</p>
+          <img id="scroll" tabindex="1" class="scroll-icon" src="../src/icons/updown.svg" alt="">
+          <div  class="dropdown-list">
+            <ul>
+              <li>Highest</li>
+              <li>Lowest</li>
+              <li>Newest</li>
+              <li>Negotiable</li>            
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Lender</th>
+            <th>
+              <img class="scroll-icon" src="../src/icons/updown.svg" alt="" />APR
+              <span>?</span>
+            </th>
+            <th>
+              <img class="scroll-icon" src="../src/icons/updown.svg" alt="" />Rate
+            </th>
+            <th>
+              <img class="scroll-icon" src="../src/icons/updown.svg" alt="" />Est.
+              Payment/Fees <span>?</span>
+            </th>
+            <th>Questions?</th>
+            <th>Apply Now</th>
+          </tr>
+        </thead>
+
+        <tbody id="result-table">         
+        </tbody>
+
+      </table>
+      <footer>
+        <a tabindex="0">
+          <svg class="nav-arrows" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="20" height="20" x="0" y="0" viewBox="0 0 512 512"
+            style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+            <g
+              transform="matrix(-1,-1.2246467991473532e-16,1.2246467991473532e-16,-1,512.000244140625,512.0000152587891)">
+              <g xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path
+                    d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068    c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557    l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104    c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                    fill="#637381" data-original="#000000" style="" class="" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <a tabindex="0">
+          <svg class="nav-arrows" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="20" height="20" x="0" y="0" viewBox="0 0 512 512"
+            style="enable-background:new 0 0 512 512" xml:space="preserve">
+            <g>
+              <g xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path
+                    d="M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068    c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557    l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104    c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z"
+                    fill="#637381" data-original="#000000" style="" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+
+      </footer>     
+        
+      
+    </section> 
+
+      <section class="rates">
+      <h1>Your fairest results</h1>
+      <div class="wrapper">
+
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>rate type</th>
+                <th>fair rate / apr</th>
+                <th>points / credits</th>
+                <th>per month
+                  <svg class="down-arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 213.333 213.333"
+                    style="enable-background:new 0 0 213.333 213.333;" xml:space="preserve">
+                    <g>
+                      <g>
+                        <polygon points="0,53.333 106.667,160 213.333,53.333 		" />
+                      </g>
+                    </g>
+                  </svg>
+
+                </th>
+              </tr>
+            </thead>
+
+            <tbody id="rates-table">             
+            </tbody>
+          </table>
+
+          <footer>
+            <p><span>?</span> Rates and fees as of 12:06 PM</p>
+            <button class="btn-primary btn-lg">next</button>
+          </footer>
+
+
+        </div>
+
+        <div class="advanced">
+          <div class="wrapper">
+            <div class="fixed">
+              <label class="checkbox-secondary">
+                <input type="checkbox" />
+                <span class="tick"></span>
+                <span class="checkbox-text">Fixed</span>
+              </label>
+              <label class="checkbox-tertiary color-green">
+                <input type="checkbox" checked />
+                <span class="tick"></span>
+                <span class="checkbox-text">15 Years</span>
+              </label>
+              <label class="checkbox-tertiary color-light-blue">
+                <input type="checkbox" checked />
+                <span class="tick"></span>
+                <span class="checkbox-text">20 Years</span>
+              </label>
+              <label class="checkbox-tertiary color-navy-blue">
+                <input type="checkbox" checked />
+                <span class="tick"></span>
+                <span class="checkbox-text">30 Years</span>
+              </label>
+
+
+            </div>
+            <div class="adjustable">
+              <label class="checkbox-secondary">
+                <input type="checkbox" />
+                <span class="tick"></span>
+                <span class="checkbox-text">Adjustable</span>
+              </label>
+              <label class="checkbox-tertiary color-purple">
+                <input type="checkbox" checked />
+                <span class="tick"></span>
+                <span class="checkbox-text">10/1</span>
+              </label>
+              <label class="checkbox-tertiary color-violet">
+                <input type="checkbox" checked />
+                <span class="tick"></span>
+                <span class="checkbox-text">7/1</span>
+              </label>
+              <label class="checkbox-tertiary color-red">
+                <input type="checkbox" checked />
+                <span class="tick"></span>
+                <span class="checkbox-text">5/1</span>
+              </label>
+
+
+            </div>
+          </div>
+
+          <label class="range-label" for="per-month">Max per month</label>
+          <div class="range-slider">
+            <input class="range-slider__range" type="range" value="3200" min="0" max="10000">
+            <span class="range-slider__value">$3200</span>
+          </div>
+
+          <label class="range-label" for="per-month">Max points/credit</label>
+          <div class="range-slider">
+            <input class="range-slider__range" type="range" value="3200" min="0" max="10000">
+            <span class="range-slider__value">$3200</span>
+          </div>
+        </div>
+      </div>
+
+    </section> 
+
+      <section class="application">
+      <div class="application-steps">
+         <span class="item-number">1</span>
+         <p>Personal details</p>
+         <span id="application-edit">Edit</span>
+         <figure >
+          <img src="/src/icons/check-white.svg" alt="">
+        </figure>        
+     
+      </div>
+      <div class="application-steps">
+         <span class="item-number">1</span>
+         <p>Employment & Income</p>
+         <span>Edit</span>
+         <figure >
+          <img src="/src/icons/check-white.svg" alt="">
+        </figure>        
+    
+      </div>
+      <div class="application-steps">
+         <span class="item-number">1</span>
+         <p>Adverse events</p>        
+         <button class="btn-tertiary">Get Started</button>      
+     
+      </div>
+      <div class="application-steps">
+         <span class="item-number">4</span>
+         <p>Upload Documents</p>
+                 
+      </section>
+      </div>
+    </section> 
+
+      <section class="dashboard">
+      <h1></h1>
+      <div class="wrapper">
+        <div class="dashboard-items">
+          <div class="progress-circle over50 p66">
+            <span>60%</span>
+            <div class="left-half-clipper">
+               <div class="first50-bar"></div>
+               <div class="value-bar"></div>
+            </div>
+         </div>
+          <div>
+            <h2>My first home</h2>
+            <p>Great start! You are so close to buying your dream house</p>
+            <button class="btn-tertiary">Complete Application</button>
+          </div>      
+          
+        </div>
+        <div class="dashboard-items">       
+          <div>
+            <h2>New application?</h2>
+            <p>Looking for buy or rent? Get started with an idae how much you can afford</p>
+            <button class="btn-tertiary-outline">Get Started</button>
+          </div>      
+          
+        </div>
+      </div>
+      
+    </section> 
+    </main>
+
+    <footer class="main-footer">
+      <div class="wrapper">
+        <div class="schedule">
+          <p>
+            Schedule a conversation <br />
+            <a href="javascript:void(0)">hello@fairrate.com</a>
+          </p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:svgjs="http://svgjs.com/svgjs"
+            version="1.1"
+            width="15"
+            height="15"
+            x="0"
+            y="0"
+            viewBox="0 0 513.64 513.64"
+            style="vertical-align: middle"
+            xml:space="preserve"
+            class=""
+          >
+            <g>
+              <g xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <path
+                    d="M499.66,376.96l-71.68-71.68c-25.6-25.6-69.12-15.359-79.36,17.92c-7.68,23.041-33.28,35.841-56.32,30.72    c-51.2-12.8-120.32-79.36-133.12-133.12c-7.68-23.041,7.68-48.641,30.72-56.32c33.28-10.24,43.52-53.76,17.92-79.36l-71.68-71.68    c-20.48-17.92-51.2-17.92-69.12,0l-48.64,48.64c-48.64,51.2,5.12,186.88,125.44,307.2c120.32,120.32,256,176.641,307.2,125.44    l48.64-48.64C517.581,425.6,517.581,394.88,499.66,376.96z"
+                    fill="#919eab"
+                    data-original="#000000"
+                    style=""
+                    class=""
+                  />
+                </g>
+              </g>
+            </g>
+          </svg>
+          <h5>+62 202 555 0117</h5>
+          <div class="social-links">
+            <svg
+              class="social-icons"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 33 33"
+            >
+              <path
+                fill="#6B7C93"
+                fill-rule="evenodd"
+                d="M0 16.5C0 7.387 7.387 0 16.5 0S33 7.387 33 16.5 25.613 33 16.5 33 0 25.613 0 16.5zm26-5.725a7.23 7.23 0 0 1-2.12.596 3.788 3.788 0 0 0 1.623-2.094 7.331 7.331 0 0 1-2.347.92A3.64 3.64 0 0 0 20.461 9c-2.039 0-3.692 1.696-3.692 3.787 0 .297.032.586.095.863-3.068-.158-5.789-1.666-7.61-3.958-.318.559-.5 1.21-.5 1.904 0 1.315.653 2.474 1.643 3.153a3.622 3.622 0 0 1-1.673-.476v.048c0 1.835 1.274 3.366 2.962 3.714-.31.086-.636.133-.973.133-.238 0-.47-.024-.695-.07.47 1.505 1.833 2.6 3.448 2.63A7.29 7.29 0 0 1 8 22.297 10.247 10.247 0 0 0 13.66 24c6.793 0 10.505-5.772 10.505-10.778l-.012-.49A7.481 7.481 0 0 0 26 10.775z"
+              />
+            </svg>
+
+            <svg
+              class="social-icons"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 33 33"
+            >
+              <path
+                fill="#6B7C93"
+                fill-rule="evenodd"
+                d="M0 16.5C0 7.387 7.387 0 16.5 0S33 7.387 33 16.5 25.613 33 16.5 33 0 25.613 0 16.5zm25 1.337c0-3.3-1.616-4.837-3.771-4.837-1.74 0-2.517 1.045-2.953 1.775v.036h-.021l.021-.036v-1.523H15C15.044 14.261 15 24 15 24h3.276v-6.003c0-.322.022-.64.109-.87.237-.643.775-1.307 1.68-1.307 1.186 0 1.66.986 1.66 2.43V24H25v-6.163zM11.012 8C9.796 8 9 8.864 9 10c0 1.11.773 2 1.966 2h.023c1.24 0 2.011-.89 2.011-2-.024-1.136-.771-2-1.988-2zM9 23h3V13H9v10z"
+              />
+            </svg>
+
+            <svg
+              class="social-icons"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 33 33"
+            >
+              <path
+                fill="#6B7C93"
+                fill-rule="evenodd"
+                d="M0 16.5C0 7.387 7.387 0 16.5 0S33 7.387 33 16.5 25.613 33 16.5 33 0 25.613 0 16.5zM17.32 26v-9.001h2.366L20 13.897h-2.68l.004-1.552c0-.81.073-1.243 1.18-1.243h1.48V8h-2.368c-2.843 0-3.844 1.505-3.844 4.035v1.862H12V17h1.772V26h3.548z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <ul>
+          <li>Company</li>
+          <li>Legal</li>
+          <li>Resources</li>
+          <li>Careers</li>
+        </ul>
+
+        <ul>
+          <li>Legal</li>
+          <li>NMLS Consumer Access</li>
+          <li>Privacy Policy</li>
+          <li>Terms Of Use</li>
+          <li>Disclosures & Licensing</li>
+        </ul>
+
+        <div class="company-info">
+          <svg
+            class="logo"
+            xmlns="http://www.w3.org/2000/svg"
+            width="185"
+            height="39"
+            viewBox="0 0 185 39"
+          >
+            <g fill="none" fill-rule="evenodd">
+              <text
+                fill="#454F5B"
+                font-family="Open Sans, sans-serif"
+                font-size="24"
+                font-weight="600"
+              >
+                <tspan x="87" y="29">FairRate</tspan>
+              </text>
+              <path fill="#4AD5F6" d="M27 6l27 33H0L27 6zm-4 27h8V22h-8v11z" />
+              <path fill="#95CDB1" d="M54 0L40 16h27L54 0" />
+              <path fill="#FFC48B" d="M69 18L55 34h27L69 18" />
+            </g>
+          </svg>
+          <p>
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+            nibh, ut fermentum massa justo sit amet risus. Praesent commodo
+            cursus magna.
+          </p>
+        </div>
+      </div>
+
+      <p>&copy 2018 Deivas.io, Inc. All rights reserved.</p>
+    </footer>
+
+    
+  </body>
+</html>

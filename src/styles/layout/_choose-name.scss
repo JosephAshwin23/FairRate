@@ -1,0 +1,27 @@
+.choose-name {   
+    @extend %display-none;
+    @extend %align-center;
+    h1 {
+        margin-bottom: 40px;
+    }
+       
+    input {
+        & + input {
+            margin-left: 15px;
+        }       
+    } 
+    
+    .red-border {
+        border-color: $danger;
+    }
+
+    button {
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    
+
+
+}

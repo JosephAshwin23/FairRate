@@ -1,0 +1,81 @@
+button {
+  @extend %cursor-pointer;
+  border-radius: 3px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: white;
+  padding: 15px 0;
+}
+
+.btn-primary {
+  background: $color-btn-primary;
+}
+
+.btn-secondary {
+  background: $color-btn-secondary;
+}
+
+.btn-tertiary {
+  background: $color-btn-tertiary url("/src/icons/button-arrow.svg") no-repeat
+    right 10px center / 18px;
+  position: relative;
+  text-align: initial;
+  text-transform: initial;
+  font-weight: 100;
+  padding: 12px 55px 12px 10px;
+
+  &::after {
+    @include position(absolute, 15%, 0);
+    content: "";
+    width: 40px;
+    height: 70%;
+    border-left: 1.5px solid white;
+    opacity: 0.5;
+  }
+}
+
+.btn-tertiary-outline {
+  background: url("/src/icons/button-arrow-grey.svg") no-repeat right 10px
+    center / 18px;
+  border: 2px solid $light-blue-grey;
+  position: relative;
+  text-align: initial;
+  text-transform: initial;
+  font-weight: 100;
+  padding: 12px 55px 12px 10px;
+  color: black;
+  font-weight: 400;
+  &::after {
+    content: "";
+    @include position(absolute, 15%, 0);
+    width: 40px;
+    height: 70%;
+    border-left: 2px solid $light-blue-grey;
+  }
+}
+
+.btn-dark {
+  background: $color-btn-dark;
+}
+
+
+
+.btn-success {
+  background: $aqua-marine;
+  text-transform: initial;
+}
+
+.btn-lg {
+  width: 180px;
+}
+
+.btn-md {
+  width: 125px;
+}
+
+.btn-sm {
+  width: 100px;
+}

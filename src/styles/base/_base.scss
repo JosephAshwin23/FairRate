@@ -1,0 +1,33 @@
+*,*::before,*::after {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+body {
+  height: 100vh;     
+}
+
+ul {
+  list-style: none;
+}
+
+.input-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #47495a;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.down-arrow {
+  @extend %cursor-pointer;
+  width: 10px;
+  vertical-align: center;
+  margin-left: 5px;
+}
+
+
+
+

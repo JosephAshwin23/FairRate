@@ -1,0 +1,23 @@
+input[type='text'],input[type='email'] {
+  @extend %grey-border;  
+  padding: 10px; 
+  outline: none;     
+
+  &::placeholder {
+    color: #adadad;
+  }
+ 
+}
+
+.input-md {
+    width: 250px;
+}
+
+.input-lg {
+    width: 380px;
+}
+
+
+
+
+

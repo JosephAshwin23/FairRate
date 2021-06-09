@@ -1,0 +1,178 @@
+.upload {
+  @extend %align-center;
+  @extend %display-none;
+  &-tab {
+    margin-top: 40px;
+
+    .focus {
+      background-color: $color-bg-secondary;
+      color: white;
+    }
+
+    a {
+      @extend %cursor-pointer;
+      @extend %light-grey-border;
+      @extend %align-center;
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: 300px;
+      padding: 10px 0;
+      font-size: 13px;
+      color: $color-txt-secondary;
+
+      &:first-child {
+        margin-right: -5px;
+        border-right: none;
+      }
+
+      &:last-child {
+        border-left: none;
+      }
+    }
+  }
+
+  .identification {
+    @extend %light-grey-border;
+    margin-top: 20px;
+    width: 600px;
+    background-color: white;
+
+    h4 {
+      font-weight: 400;
+
+      &:nth-child(1) {
+        padding: 15px 0;
+        border-bottom: 1px solid $pale-blue;
+      }
+    }
+
+    a {
+      color: $color-btn-primary;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    padding: 40px 20px;
+  }
+
+  .file-label {
+    @extend %cursor-pointer;
+    color: $color-btn-primary;
+    text-decoration: underline;
+  }
+
+  input[type=file] {
+   display: none;
+  }
+
+  .drag-drop {
+    @extend %cursor-pointer;
+    background-color: $pale-grey;
+    border: 2px dashed $pale-blue;
+    width: 300px;
+    padding: 60px 40px;
+    position: relative;
+    margin-right: 20px;
+
+    h4 {
+      margin-top: 10px;
+    }
+
+    p {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 10px;
+      font-size: 12px;
+      color: $color-txt-light;
+    }
+ 
+
+    
+  }
+
+  .green-border {
+    border: 2px solid #4CAF50;
+  }
+
+  .instructions {
+    ul {
+      list-style: initial;
+      margin: 20px 0 0 20px;
+      text-align: initial;
+
+      li {
+        font-size: 14px;
+      }
+    }
+
+    a {
+      font-size: 13px;
+      display: inline-block;
+      margin-top: 60px;
+    }
+  }
+
+  &-files {
+    .file-item {
+      @extend %flex;
+      @extend %align-center;
+      align-items: center;
+      padding: 20px 15px;
+      background-color: $color-bg-primary;
+      position: relative;
+
+      div {
+        &:nth-child(1) {
+          width: 120px;
+        }
+      }
+
+      p {
+        font-size: 11px;
+
+        &:nth-child(3) {
+          width: 50px;
+        }
+      }
+
+      img {
+        vertical-align: middle;
+      }
+
+      .trash {
+        @extend %cursor-pointer;
+      }
+
+      .file-type {
+        width: 23px;
+
+        & + p {
+          display: inline-block;
+        }
+      }
+
+      & ~ .file-item {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 30px;
+          width: 90%;
+          height: 1px;
+          background-color: $pale-blue;
+        }
+      }
+    }
+  }
+
+  footer {
+    @extend %flex;
+    margin-top: 30px;
+  }
+}
+
+
+
