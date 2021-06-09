@@ -5,7 +5,9 @@
 }
 
 body {
-  height: 100vh;     
+  height: 100vh; 
+  @extend %flex;
+  flex-direction: column;      
 }
 
 ul {

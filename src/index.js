@@ -157,9 +157,7 @@ const identification = document.querySelector(".identification");
 const dateInput = document.getElementById("datepicker");
 const applicationEdit = document.getElementById("application-edit");
 
-
 // functions
-
 
 const dropDown = (id) => {
   document.querySelector(`#dropdown-${id}`).addEventListener("click", () => {
@@ -177,8 +175,6 @@ const dropDown = (id) => {
     });
   });
 };
-
-
 
 logo.addEventListener("click", () => {
   window.location.reload();
@@ -339,7 +335,6 @@ uploadTab.forEach((tab) => {
     tab.classList.toggle("focus");
   });
 });
-
 
 dropDown("month");
 dropDown("years");

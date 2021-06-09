@@ -1,4 +1,5 @@
 main { 
+    flex-grow: 1;
     @extend %flex-center;
     padding: 139px 0 60px 0;
     background: $color-bg-primary;
