@@ -1,6 +1,6 @@
 import "./styles/styles.scss";
-require('jquery');
-require('jquery-ui-bundle');
+require("jquery");
+require("jquery-ui-bundle");
 
 let resultData = [
   {
@@ -132,19 +132,13 @@ let rateData = [
   },
 ];
 
-const scroll = document.querySelectorAll("scroll-icon");
-const nameInputs = document.querySelectorAll('.choose-name input')
-const dropdown = document.querySelectorAll(".dropdown-list");
-const navbarLink = document.querySelectorAll('.navbar .top li')
-const loginName = document.querySelector('.user-login p')
-const secondNavbar = document.getElementById('second-navbar');
-const selectOptions = document.querySelectorAll(".dropdown-list li");
-const firstName = document.getElementById('first-name');
-const lastName = document.getElementById('last-name');
-const email = document.getElementById('email');
-const address = document.getElementById('address')
-const welcomeMessage = document.querySelector('.dashboard h1');
-const selectText = document.getElementById("dropdown-text");
+const nameInputs = document.querySelectorAll(".choose-name input");
+const navbarLink = document.querySelectorAll(".navbar .top li");
+const loginName = document.querySelector(".user-login p");
+const secondNavbar = document.getElementById("second-navbar");
+const firstName = document.getElementById("first-name");
+const lastName = document.getElementById("last-name");
+const welcomeMessage = document.querySelector(".dashboard h1");
 const uploadTab = document.querySelectorAll(".upload-tab a");
 const resultTable = document.getElementById("result-table");
 const ratesTable = document.getElementById("rates-table");
@@ -153,36 +147,58 @@ const nextButton = document.querySelectorAll(".btn-primary");
 const prevButton = document.querySelectorAll(".btn-secondary");
 const nextDarkButton = document.querySelectorAll(".btn-dark");
 const getStartedBlue = document.querySelector(".btn-tertiary");
-const getStartedOutline = document.querySelector('.dashboard .btn-tertiary-outline');
-const dropEffect = document.querySelector(".drop-effect");
+const getStartedOutline = document.querySelector(
+  ".dashboard .btn-tertiary-outline"
+);
 const fileInput = document.getElementById("file-upload");
 const uploadFiles = document.getElementById("upload-files");
-const deleteFile = document.querySelectorAll(".trash");
-const logo = document.querySelector('.logo');
-const identification = document.querySelector('.identification');
-const dateInput = document.getElementById('datepicker');
-const applicationEdit = document.getElementById('application-edit')
+const logo = document.querySelector(".logo");
+const identification = document.querySelector(".identification");
+const dateInput = document.getElementById("datepicker");
+const applicationEdit = document.getElementById("application-edit");
 
 
-logo.addEventListener('click', () => {
-    window.location.reload();
-})
+// functions
+
+
+const dropDown = (id) => {
+  document.querySelector(`#dropdown-${id}`).addEventListener("click", () => {
+    document
+      .querySelector(`#dropdown-${id} .dropdown-list`)
+      .classList.toggle("show");
+  });
+
+  document.querySelectorAll(`#dropdown-${id} li`).forEach((li) => {
+    li.addEventListener("click", () => {
+      document.querySelector(`#dropdown-${id} p`).innerText = li.innerText;
+      document
+        .querySelector(`#dropdown-${id} .dropdown-list`)
+        .classList.add("show");
+    });
+  });
+};
+
+
+
+logo.addEventListener("click", () => {
+  window.location.reload();
+});
 
 // navbar links
 
-navbarLink.forEach( link => {
-  link.addEventListener('click', () => {
-    navbarLink.forEach( li => li.classList.remove('focus'));
-    link.classList.add('focus');
-  })
-})
+navbarLink.forEach((link) => {
+  link.addEventListener("click", () => {
+    navbarLink.forEach((li) => li.classList.remove("focus"));
+    link.classList.add("focus");
+  });
+});
 
 // load results
 
 resultData.forEach((data) => {
   const clickme = (e) => {
-    console.log(e.target)
-  }
+    console.log(e.target);
+  };
   resultTable.innerHTML += `
 <tr>
 <td>
@@ -218,9 +234,6 @@ resultData.forEach((data) => {
 </tr>
 
 `;
-
-
-
 });
 
 // load rates
@@ -237,17 +250,18 @@ rateData.forEach((data) => {
        </td>
        <td>
          <p class="text-underline">-$${data.points}</p>
-         <progress class="progress progress-${data.color}" value=${data.points.replace(
-           /,/g,
-           ""
-         )} max="2000">32%</progress>
+         <progress class="progress progress-${
+           data.color
+         }" value=${data.points.replace(/,/g, "")} max="2000">32%</progress>
        </td>
        <td>
          <p>$${data.permonth}</p>
-            <progress class="month-progress progress progress-${data.color}" value=${data.permonth.replace(
-              /,/g,
-              ""
-            )} max="5000">32%</progress>
+            <progress class="month-progress progress progress-${
+              data.color
+            }" value=${data.permonth.replace(
+    /,/g,
+    ""
+  )} max="5000">32%</progress>
         </td>
     </tr>       
     `;
@@ -257,19 +271,18 @@ rateData.forEach((data) => {
 
 let sectionIndex = 0;
 
-const nextSection = () => {   
+const nextSection = () => {
   sectionIndex = sectionIndex === 6 ? (sectionIndex = 0) : sectionIndex;
   sectionIndex += 1;
   sections.forEach((section) => section.classList.remove("show"));
-  sections[sectionIndex].classList.add("show"); 
-  console.log(sectionIndex);   
+  sections[sectionIndex].classList.add("show");
+  console.log(sectionIndex);
 };
 
 const prevSection = () => {
   sectionIndex -= 1;
   sections.forEach((section) => section.classList.remove("show"));
   sections[sectionIndex].classList.add("show");
-  
 };
 
 getStartedOutline.addEventListener("click", () => {
@@ -281,53 +294,44 @@ nextDarkButton.forEach((button) => {
 });
 
 nextButton.forEach((button) => {
-
-  button.addEventListener("click", () => {   
-      if( firstName.value === '' || lastName.value === '' ) {
-        nameInputs.forEach( input => input.classList.add('red-border'))
-        alert('Enter required Fields');        
-      } else {
-        if( sectionIndex == 4) {
-          secondNavbar.classList.remove('none');
-        } 
-        window.scrollTo(0, 0);
-        welcomeMessage.innerText = `Good morning ${firstName.value}`    
-        nextSection();
+  button.addEventListener("click", () => {
+    if (firstName.value === "" || lastName.value === "") {
+      nameInputs.forEach((input) => input.classList.add("red-border"));
+      alert("Enter required Fields");
+    } else {
+      if (sectionIndex == 4) {
+        secondNavbar.classList.remove("none");
       }
-    })  
-     
- 
-
+      window.scrollTo(0, 0);
+      welcomeMessage.innerText = `Good morning ${firstName.value}`;
+      nextSection();
+    }
+  });
 });
 
 getStartedBlue.addEventListener("click", () => {
- if( sectionIndex == 5) {
-  secondNavbar.classList.add('none');
- } 
- nextSection();
+  if (sectionIndex == 5) {
+    secondNavbar.classList.add("none");
+  }
+  nextSection();
 });
 
-applicationEdit.addEventListener('click', () => {
+applicationEdit.addEventListener("click", () => {
   sections.forEach((section) => section.classList.remove("show"));
-  sections[1].classList.add('show');
-  secondNavbar.classList.add('none');
+  sections[1].classList.add("show");
+  secondNavbar.classList.add("none");
   sectionIndex = 1;
-
-})
-
+});
 
 prevButton.forEach((button) => {
   button.addEventListener("click", prevSection);
-  
 });
-
-
 
 getStartedBlue.addEventListener("click", () => {
-  loginName.innerText = `${firstName.value} ${lastName.value}`
+  loginName.innerText = `${firstName.value} ${lastName.value}`;
 });
 
-$('body').on('click','#result-table button', nextSection);
+$("body").on("click", "#result-table button", nextSection);
 
 uploadTab.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -336,45 +340,30 @@ uploadTab.forEach((tab) => {
   });
 });
 
-// scroll.forEach( item => {
-//   item.addEventListener("click", () => {
-//     dropdown.forEach( item = () => {
-//       item.classList.toggle("hide")
-//     });
-//   })
-// })
 
-
-
-selectOptions.forEach( item => {
-  item.addEventListener("click", () => {
-    console.log(item);
-    // document.getElementById('dropdown-text').innerText = li.innerText;
-    // dropdown.classList.toggle("hide");
-  });
-});
+dropDown("month");
+dropDown("years");
+dropDown("price");
+dropDown("sort");
 
 // date picker
 
 let dt = new Date();
-let date =  dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+let date = dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
 
 dateInput.value = date;
-
 
 $("#datepicker").datepicker();
 
 // navigate upload tab
 
-uploadTab[1].addEventListener('click', () => {
-   identification.classList.add('hide');
-})
+uploadTab[1].addEventListener("click", () => {
+  identification.classList.add("hide");
+});
 
-uploadTab[0].addEventListener('click', () => {
-   identification.classList.remove('hide');
-})
-
-
+uploadTab[0].addEventListener("click", () => {
+  identification.classList.remove("hide");
+});
 
 // control slider
 
@@ -382,8 +371,8 @@ const sliders = document.querySelectorAll(".range-slider");
 
 Array.prototype.forEach.call(sliders, (slider) => {
   slider.querySelector("input").addEventListener("input", (event) => {
-    slider.querySelector("span").innerText = '$' + event.target.value;
-  applyFill(event.target);
+    slider.querySelector("span").innerText = "$" + event.target.value;
+    applyFill(event.target);
   });
 
   applyFill(slider.querySelector("input"));
@@ -413,7 +402,7 @@ const initApp = () => {
     droparea.addEventListener(evtName, inactive);
   });
 
-  droparea.addEventListener("drop", handleDrop);  
+  droparea.addEventListener("drop", handleDrop);
 };
 
 document.addEventListener("DOMContentLoaded", initApp);
@@ -429,7 +418,7 @@ const handleDrop = (e) => {
   }
 };
 
-$('body').on('click','.upload-files .trash', function() {
+$("body").on("click", ".upload-files .trash", function () {
   console.log(this.parentElement.remove());
 });
 
@@ -443,7 +432,6 @@ fileInput.onchange = function (event) {
   }
 };
 
-
 const uploadingFiles = (Array) => {
   Array.forEach((file) => {
     uploadFiles.innerHTML += `
@@ -454,8 +442,7 @@ const uploadingFiles = (Array) => {
           )}.svg" alt="" />
         <p>${file.name}</p>
         </div>
-        <p>${file.name.substr(
-          file.name.indexOf(".") + 1)}</p>
+        <p>${file.name.substr(file.name.indexOf(".") + 1)}</p>
         <p>${(file.size / 1000000).toFixed(2)} MB</p>
         <p>UPLOADED</p>
         <img class="trash" src="../src/icons/trash.svg" alt="" />
@@ -466,8 +453,3 @@ const uploadingFiles = (Array) => {
 };
 
 // goodmorning message
-
-
-
-
-

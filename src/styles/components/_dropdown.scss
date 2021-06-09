@@ -1,36 +1,28 @@
-select {
-  @extend %grey-border;
-  @extend %position-relative;  
-  padding: 10px;
-  text-align: start;
-  outline: none;
-  width: 380px
-}
-
-
-
 .dropdown {
   @extend %grey-border;
-  @extend %position-relative;  
+  @extend %position-relative;
   padding: 10px;
   text-align: start;
 
   &-list {
-    @include position(absolute,60px,0);  
+    @include position(absolute, 60px, 0);
   }
 
-  .dropdown-list { 
-    display: none; 
-    z-index: 10; 
+  .dropdown-list {
+    display: none;
+    z-index: 10;
+  }
+
+  .show {
+    display: block;
   }
 
   ul {
+    @extend %box-shadow;
     @extend %grey-border;
     @include width-height(200px, 150px);
     @extend %triangle;
-    overflow-y: scroll;    
-
-    
+    overflow-y: scroll;
 
     li {
       @extend %position-relative;
@@ -75,8 +67,4 @@ select {
   @extend %vertical-align;
   width: 10px;
   right: 10px;
-
-  &:focus + .dropdown-list {
-    display: block;    
-  }
 }

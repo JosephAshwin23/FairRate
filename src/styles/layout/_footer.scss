@@ -1,7 +1,6 @@
-.main-footer {  
+.main-footer {
   background: #f4f6f8;
-  padding: 45px 100px;  
-   
+  padding: 45px 100px;
 
   .wrapper {
     @extend %flex;
@@ -14,7 +13,7 @@
 
   .company-info {
     width: 320px;
-    p {        
+    p {
       margin-top: 15px;
     }
   }
@@ -28,16 +27,20 @@
 
   .social-links {
     margin-top: 15px;
+
+    a {
+      text-decoration: none;
+
+      & + a {
+        margin-left: 10px;
+      }
+    }
   }
 
   .social-icons {
     @extend %cursor-pointer;
     width: 26px;
     height: 26px;
-
-    & + .social-icons {
-      margin-left: 10px;
-    }
   }
 
   h5 {
@@ -54,7 +57,6 @@
       @extend %cursor-pointer;
       color: $gunmetal;
       margin-bottom: 5px;
-
     }
   }
 }

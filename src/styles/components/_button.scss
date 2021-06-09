@@ -11,11 +11,19 @@ button {
 }
 
 .btn-primary {
-  background: $color-btn-primary;
+  @include button($color-btn-primary, $bright-sky-blue);
 }
 
 .btn-secondary {
-  background: $color-btn-secondary;
+  @include button($color-btn-secondary, $steel-grey);
+}
+
+.btn-dark {
+  @include button($color-btn-dark, #454e57);
+}
+
+.btn-success {
+  @include button($aqua-marine, #34adab);
 }
 
 .btn-tertiary {
@@ -35,6 +43,10 @@ button {
     border-left: 1.5px solid white;
     opacity: 0.5;
   }
+
+  &:hover {
+    background-color: $bright-sky-blue;
+  }
 }
 
 .btn-tertiary-outline {
@@ -51,21 +63,9 @@ button {
   &::after {
     content: "";
     @include position(absolute, 15%, 0);
-    width: 40px;
-    height: 70%;
+    @include width-height(40px, 70%);
     border-left: 2px solid $light-blue-grey;
   }
-}
-
-.btn-dark {
-  background: $color-btn-dark;
-}
-
-
-
-.btn-success {
-  background: $aqua-marine;
-  text-transform: initial;
 }
 
 .btn-lg {

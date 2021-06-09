@@ -19,8 +19,7 @@
         }
 
         .item-number {
-            display: flex;
-            justify-content: center;           
+            @extend %flex-center;          
             border-radius: 50%;
             width: 25.6px;
             border: 2px solid; 

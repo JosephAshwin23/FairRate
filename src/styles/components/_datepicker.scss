@@ -1,77 +1,76 @@
 .ui-datepicker {
-    @extend %grey-border;
-    @extend %triangle;
-    background: white;
-    width: 300px;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 15px;
-    position: relative;
-    display: none;
+  @extend %box-shadow;
+  @extend %grey-border;
+  @extend %triangle;
+  @extend %position-relative;
+  background: white;
+  width: 300px;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 15px;
+  display: none;
 
-    &::before {
-        @include position(absolute,-6px,20px);      
-        @extend %grey-border;
-        @include width-height(12px);
-        content: '';
-        border-right: none;
-        border-bottom: none;
-        z-index: 2;     
-        transform: rotate(45deg);
+  &::before {
+    @include position(absolute, -6px, 20px);
+    @extend %grey-border;
+    @include width-height(12px);
+    content: "";
+    border-right: none;
+    border-bottom: none;
+    z-index: 2;
+    transform: rotate(45deg);
+  }
+
+  .ui-icon-circle-triangle-w {
+    @extend %position-absolute;
+    left: 15px;
+    font-size: 14px;
+    top: 11px;
+  }
+
+  .ui-icon-circle-triangle-e {
+    @extend %position-absolute;
+    right: 15px;
+    font-size: 14px;
+    top: 11px;
+  }
+
+  .ui-datepicker-title {
+    margin-bottom: 10px;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  table {
+    margin: auto;
+    width: 90%;
+    border-spacing: 0;
+  }
+
+  thead {
+    th {
+      span {
+        font-size: 12px;
+        color: $color-txt-secondary;
+      }
+    }
+  }
+
+  tbody {
+    td {
+      border: 1px solid $color-input-border;
+      @include width-height(25px, 36px);
+
+      a {
+        text-decoration: none;
+        font-size: 12px;
+        color: black;
       }
 
-    .ui-icon-circle-triangle-w {
-        @extend %position-absolute;
-        left: 15px;
-        font-size: 14px;
-        top: 11px;
+      &:hover {
+        background: #e1f9ff;
+      }
     }
-
-    .ui-icon-circle-triangle-e {
-        @extend %position-absolute;
-        right: 15px;
-        font-size: 14px;
-        top: 11px;
-    }
-
-    .ui-datepicker-title {
-        margin-bottom: 10px;
-        span {
-            font-weight: bold;           
-        }
-        
-    }
-
-    table {
-        margin: auto;
-        width: 90%;
-        border-spacing: 0;                      
-    }
-
-    thead {
-        th {
-            
-            span {
-                font-size: 12px;
-                color: $color-txt-secondary;
-            }
-        }
-    }
-
-    tbody {
-        td {
-            border: 1px solid $color-input-border;
-            @include width-height(25px,36px);           
-
-            a {
-                text-decoration: none;
-                font-size: 12px;
-                color: black;
-            }
-
-            &:hover {
-                background: #e1f9ff;
-            }
-        }
-    }
+  }
 }

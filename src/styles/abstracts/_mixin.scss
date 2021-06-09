@@ -1,17 +1,30 @@
 @mixin input-img($icon) {
-  padding-left: 40px; 
+  padding-left: 40px;
   background: white url("/src/icons/#{$icon}.svg") no-repeat left 10px center / 20px;
 }
 
-@mixin width-height($width,$height: $width) {
+@mixin width-height($width, $height: $width) {
   width: $width;
   height: $height;
 }
 
-@mixin position($position,$top: null,$right: null,$bottom: null,$left: null) {
+@mixin position($position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null) {
   position: $position;
   top: $top;
   right: $right;
   bottom: $bottom;
-  left: $left;  
+  left: $left;
+}
+
+@mixin button($bg-color, $hover-color) {
+  background: $bg-color;
+
+  &:hover {
+    @extend %button-tansition;
+    background: $hover-color;
+  }
 }

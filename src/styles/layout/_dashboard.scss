@@ -12,6 +12,10 @@
        padding: 25px;
        display: flex;
 
+       &:nth-child(1) {
+        @extend %box-shadow;
+       }
+
        &:nth-child(2) {
            background: transparent;
            border: 2px dashed $color-input-border;

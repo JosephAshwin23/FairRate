@@ -5,10 +5,18 @@
     width: 950px;
   }
 
+  .input-label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: $color-txt-primary;
+    font-weight: 600;
+    margin-bottom: 7px;
+  }
+
   .left-side {
     width: 400px;
 
-    
     h1 {
       margin-bottom: 15px;
     }
