@@ -1,7 +1,11 @@
 .main-footer {
   background: #f4f6f8;
   padding: 45px 100px;
-
+ 
+  .logo {
+    @extend %cursor-pointer;
+  }
+  
   .wrapper {
     @extend %flex;
     margin-bottom: 30px;

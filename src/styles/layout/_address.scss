@@ -83,6 +83,7 @@
 
       &:hover .checkbox-icon {
         fill: $color-btn-primary;
+        @extend %button-tansition;
       }
 
       &:first-child {
@@ -93,8 +94,9 @@
     .checkbox-square-container,
     .checkbox-container {
       &:hover {
+        @extend %button-tansition;
         box-shadow: 0 0 0 1pt $color-btn-primary;
-        border-color: $color-btn-primary;
+        border-color: $color-btn-primary;        
       }
     }
 

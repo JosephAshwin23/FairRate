@@ -9,14 +9,14 @@
     padding: 15px 30px;
     border-bottom: 1px solid $pale-blue;
 
-    .logo {
+    & > * {
       @extend %cursor-pointer;
-      margin: 0 auto 0 30px;
     }
 
-    .side-menu {
-      @extend %cursor-pointer;
+    .logo {     
+      margin: 0 auto 0 30px;
     }
+    
 
     ul {
       display: flex;
@@ -29,8 +29,7 @@
       li {
         font-size: 13px;
         font-weight: 600;
-        color: $color-txt-light;
-        @extend %cursor-pointer;
+        color: $color-txt-light;       
         & + li {
           margin-left: 30px;
         }
@@ -40,14 +39,9 @@
     .user-login {
       display: flex;
       align-items: center;
-      margin-left: 50px;
+      margin-left: 50px;     
 
-      .notification-icon {
-        @extend %cursor-pointer;
-      }
-
-      .user-img {
-        @extend %cursor-pointer;
+      .user-img {       
         @include width-height(35px);
         border-radius: 50%;
         object-fit: cover;

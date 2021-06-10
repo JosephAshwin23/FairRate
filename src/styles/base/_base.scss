@@ -5,9 +5,9 @@
 }
 
 body {
-  @extend %flex;
-  height: 100vh;   
-  flex-direction: column;      
+  @extend %flex;    
+  flex-direction: column; 
+  height: 100vh;      
 }
 
 ul {

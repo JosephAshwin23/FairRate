@@ -27,19 +27,14 @@ button {
 }
 
 .btn-tertiary {
+  @extend %btn-tertiary;
   background: $color-btn-tertiary url("/src/icons/button-arrow.svg") no-repeat
-    right 10px center / 18px;
-  position: relative;
-  text-align: initial;
-  text-transform: initial;
-  font-weight: 100;
-  padding: 12px 55px 12px 10px;
+    right 10px center / 18px;  
 
   &::after {
     @include position(absolute, 15%, 0);
-    content: "";
-    width: 40px;
-    height: 70%;
+    @include width-height(40px, 70%);
+    content: "";   
     border-left: 1.5px solid white;
     opacity: 0.5;
   }
@@ -50,14 +45,10 @@ button {
 }
 
 .btn-tertiary-outline {
+  @extend %btn-tertiary;
   background: url("/src/icons/button-arrow-grey.svg") no-repeat right 10px
     center / 18px;
-  border: 2px solid $light-blue-grey;
-  position: relative;
-  text-align: initial;
-  text-transform: initial;
-  font-weight: 100;
-  padding: 12px 55px 12px 10px;
+  border: 2px solid $light-blue-grey; 
   color: black;
   font-weight: 400;
   &::after {

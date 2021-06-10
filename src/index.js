@@ -147,9 +147,7 @@ const nextButton = document.querySelectorAll(".btn-primary");
 const prevButton = document.querySelectorAll(".btn-secondary");
 const nextDarkButton = document.querySelectorAll(".btn-dark");
 const getStartedBlue = document.querySelector(".btn-tertiary");
-const getStartedOutline = document.querySelector(
-  ".dashboard .btn-tertiary-outline"
-);
+const getStartedOutline = document.querySelector( ".dashboard .btn-tertiary-outline");
 const fileInput = document.getElementById("file-upload");
 const uploadFiles = document.getElementById("upload-files");
 const logo = document.querySelector(".logo");
@@ -158,6 +156,27 @@ const dateInput = document.getElementById("datepicker");
 const applicationEdit = document.getElementById("application-edit");
 
 // functions
+
+
+const uploadingFiles = (Array) => {
+  Array.forEach((file) => {
+    uploadFiles.innerHTML += `
+        <div class="file-item">
+        <div>
+          <img class="file-type" src="../src/icons/${file.name.substr(
+            file.name.indexOf(".") + 1
+          )}.svg" alt="" />
+        <p>${file.name}</p>
+        </div>
+        <p>${file.name.substr(file.name.indexOf(".") + 1)}</p>
+        <p>${(file.size / 1000000).toFixed(2)} MB</p>
+        <p>UPLOADED</p>
+        <img class="trash" src="../src/icons/trash.svg" alt="" />
+        </div>
+        </div>
+        `;
+  });
+};
 
 const dropDown = (id) => {
   document.querySelector(`#dropdown-${id}`).addEventListener("click", () => {
@@ -176,6 +195,15 @@ const dropDown = (id) => {
   });
 };
 
+const hideSections = () =>  sections.forEach((section) => section.classList.remove("show"));
+
+const addClassList = (element,ClassName) => element.classList.add(ClassName);
+
+const removeClassList = (element,ClassName) => element.classList.remove(ClassName);
+
+
+// window reload
+
 logo.addEventListener("click", () => {
   window.location.reload();
 });
@@ -184,8 +212,8 @@ logo.addEventListener("click", () => {
 
 navbarLink.forEach((link) => {
   link.addEventListener("click", () => {
-    navbarLink.forEach((li) => li.classList.remove("focus"));
-    link.classList.add("focus");
+    navbarLink.forEach((li) => removeClassList(li,'focus') );    
+    addClassList(link,'focus')
   });
 });
 
@@ -270,15 +298,14 @@ let sectionIndex = 0;
 const nextSection = () => {
   sectionIndex = sectionIndex === 6 ? (sectionIndex = 0) : sectionIndex;
   sectionIndex += 1;
-  sections.forEach((section) => section.classList.remove("show"));
-  sections[sectionIndex].classList.add("show");
-  console.log(sectionIndex);
+  hideSections();
+  addClassList(sections[sectionIndex],'show');   
 };
 
 const prevSection = () => {
   sectionIndex -= 1;
-  sections.forEach((section) => section.classList.remove("show"));
-  sections[sectionIndex].classList.add("show");
+  hideSections();
+  addClassList(sections[sectionIndex],'show'); 
 };
 
 getStartedOutline.addEventListener("click", () => {
@@ -292,11 +319,11 @@ nextDarkButton.forEach((button) => {
 nextButton.forEach((button) => {
   button.addEventListener("click", () => {
     if (firstName.value === "" || lastName.value === "") {
-      nameInputs.forEach((input) => input.classList.add("red-border"));
+      nameInputs.forEach((input) => addClassList(input,'red-border'));
       alert("Enter required Fields");
     } else {
       if (sectionIndex == 4) {
-        secondNavbar.classList.remove("none");
+        removeClassList(secondNavbar,'none');       
       }
       window.scrollTo(0, 0);
       welcomeMessage.innerText = `Good morning ${firstName.value}`;
@@ -307,15 +334,15 @@ nextButton.forEach((button) => {
 
 getStartedBlue.addEventListener("click", () => {
   if (sectionIndex == 5) {
-    secondNavbar.classList.add("none");
+    addClassList(secondNavbar,'none');
   }
   nextSection();
 });
 
 applicationEdit.addEventListener("click", () => {
-  sections.forEach((section) => section.classList.remove("show"));
-  sections[1].classList.add("show");
-  secondNavbar.classList.add("none");
+  hideSections();
+  addClassList(sections[1],'show') 
+  addClassList(secondNavbar,'none')
   sectionIndex = 1;
 });
 
@@ -331,7 +358,7 @@ $("body").on("click", "#result-table button", nextSection);
 
 uploadTab.forEach((tab) => {
   tab.addEventListener("click", () => {
-    uploadTab.forEach((tab) => tab.classList.remove("focus"));
+    uploadTab.forEach((tab) => removeClassList(tab,'focus'));
     tab.classList.toggle("focus");
   });
 });
@@ -345,19 +372,17 @@ dropDown("sort");
 
 let dt = new Date();
 let date = dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
-
 dateInput.value = date;
-
 $("#datepicker").datepicker();
 
 // navigate upload tab
 
-uploadTab[1].addEventListener("click", () => {
-  identification.classList.add("hide");
+uploadTab[1].addEventListener("click", () => {  
+  addClassList(identification,'hide');
 });
 
 uploadTab[0].addEventListener("click", () => {
-  identification.classList.remove("hide");
+  removeClassList(identification,'hide');
 });
 
 // control slider
@@ -382,8 +407,8 @@ function applyFill(slider) {
 
 const initApp = () => {
   const droparea = document.getElementById("drag-drop");
-  const active = () => droparea.classList.add("green-border");
-  const inactive = () => droparea.classList.remove("green-border");
+  const active = () => addClassList(droparea,'green-border');
+  const inactive = () => removeClassList(droparea,'green-border');
   const prevents = (e) => e.preventDefault();
   ["dragenter", "dragover", "dragleave", "drop"].forEach((evtName) => {
     droparea.addEventListener(evtName, prevents);
@@ -427,24 +452,5 @@ fileInput.onchange = function (event) {
   }
 };
 
-const uploadingFiles = (Array) => {
-  Array.forEach((file) => {
-    uploadFiles.innerHTML += `
-        <div class="file-item">
-        <div>
-          <img class="file-type" src="../src/icons/${file.name.substr(
-            file.name.indexOf(".") + 1
-          )}.svg" alt="" />
-        <p>${file.name}</p>
-        </div>
-        <p>${file.name.substr(file.name.indexOf(".") + 1)}</p>
-        <p>${(file.size / 1000000).toFixed(2)} MB</p>
-        <p>UPLOADED</p>
-        <img class="trash" src="../src/icons/trash.svg" alt="" />
-        </div>
-        </div>
-        `;
-  });
-};
 
-// goodmorning message
+
