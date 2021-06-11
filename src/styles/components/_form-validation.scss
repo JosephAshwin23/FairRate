@@ -1,0 +1,21 @@
+.form-control {
+    display: inline-block;
+
+    span {
+        display: block;
+        text-align: initial;
+        margin-top: 5px;
+        font-size: 13px;
+        color: #e74c3c;
+        visibility: hidden;
+    }
+
+    &.error span {
+        visibility: initial;
+    }
+
+    &.success input {
+      border-color: $verify-green;
+    }
+
+}

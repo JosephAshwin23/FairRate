@@ -264,6 +264,37 @@ const resultItems = (data) => {
   `
 }
 
+const setSuccessFor = (input) => {
+  const formControl = input.parentElement;
+  formControl.className = "form-control success";
+}
+
+const setErrorFor = (input,message) => {
+  const formControl = input.parentElement;
+  const span = formControl.querySelector("span");
+  formControl.className = "form-control error";
+  span.innerText = message;
+}
+
+const validate = (e) => {
+  if (e.target.name == "first-name") {
+    if (e.target.value.trim().length > 0) {
+      setSuccessFor(firstName);
+    } else {
+      setErrorFor(firstName, "First name cannot be black");
+    }
+  }
+
+  if (e.target.name == "last-name") {
+    console.log(e.target.name);
+    if (e.target.value.trim().length > 0) {
+      setSuccessFor(lastName);
+    } else {
+      setErrorFor(lastName, "Last name cannot be black");
+    }
+  }
+}
+
 
 const dropDown = (id) => {
   const dropDownParent = document.querySelector(`#dropdown-${id}`);
@@ -312,6 +343,13 @@ navbarLink.forEach((link) => {
     addClassList(link, "focus");
   });
 });
+
+
+// form validation
+
+firstName.addEventListener("input", validate);
+lastName.addEventListener("input", validate);
+
 
 // load results
 
@@ -388,9 +426,8 @@ getStartedOutline.addEventListener("click", () => {
 
 nextButton.forEach((button) => {
   button.addEventListener("click", () => {
-    if (firstName.value === "" || lastName.value === "") {
-      nameInputs.forEach((input) => addClassList(input, "red-border"));
-      alert("Enter required Fields");
+    if(firstName.value.length < 1 && lastName.value.length < 1) {
+      return false;
     } else {
       if (sectionIndex == 4) {
         removeClassList(secondNavbar, "none");
@@ -398,7 +435,8 @@ nextButton.forEach((button) => {
       window.scrollTo(0, 0);
       welcomeMessage.innerText = `Good morning ${firstName.value}`;
       nextSection();
-    }
+    }   
+    
   });
 });
 
