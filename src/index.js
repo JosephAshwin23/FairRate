@@ -172,20 +172,21 @@ let rateData = [
   },
 ];
 
-const nameInputs = document.querySelectorAll(".choose-name input");
 const navbarLink = document.querySelectorAll(".navbar .top li");
+const nameForm = document.getElementById('name-form')
 const loginName = document.querySelector(".user-login p");
 const secondNavbar = document.getElementById("second-navbar");
 const firstName = document.getElementById("first-name");
 const lastName = document.getElementById("last-name");
-const welcomeMessage = document.querySelector(".dashboard h1");
+const address = document.getElementById('address');
+const email = document.getElementById('email');
+const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const uploadTab = document.querySelectorAll(".upload-tab a");
 const resultTable = document.getElementById("result-table");
 const ratesTable = document.getElementById("rates-table");
 const sections = document.querySelectorAll("section");
 const nextButton = document.querySelectorAll(".btn-primary");
 const prevButton = document.querySelectorAll(".btn-secondary");
-const nextDarkButton = document.querySelectorAll(".btn-dark");
 const getStartedBlue = document.querySelector(".btn-tertiary");
 const getStartedOutline = document.querySelector(
   ".dashboard .btn-tertiary-outline"
@@ -293,7 +294,28 @@ const validate = (e) => {
       setErrorFor(lastName, "Last name cannot be black");
     }
   }
+
+  // if (e.target.name == "address") {
+  //   console.log(e.target.name);
+  //   if (e.target.value.trim().length > 0) {
+  //     setSuccessFor(address);
+  //   } else {
+  //     setErrorFor(address, "Address cannot be black");
+  //   }
+  // }
+
+  // if (e.target.name == "email") {
+  //   if (e.target.value.trim().length > 0) {
+  //     setErrorFor(email, "Email cannot be black");
+  //   } else if (emailRegex.test(e.target.value.trim())) {
+  //     setSuccessFor(email);
+  //   } else {
+  //     setErrorFor(email, "Enter valid email");
+  //   }
+  // }
 }
+
+
 
 
 const dropDown = (id) => {
@@ -347,8 +369,23 @@ navbarLink.forEach((link) => {
 
 // form validation
 
+nameForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  if(firstName.value.length === 0 && firstName.value.length === 0 ) {
+    setErrorFor(firstName,"First name cannot be blank");
+    setErrorFor(lastName,"Last name cannot be blank");
+    welcomeMessage.innerText = `Good morning ${firstName.value}`;
+    return false;
+  } else {
+    nextSection();
+  }  
+})
+ 
 firstName.addEventListener("input", validate);
 lastName.addEventListener("input", validate);
+// address.addEventListener("input", validate);
+// email.addEventListener("input", validate);
 
 
 // load results
@@ -408,6 +445,7 @@ const nextSection = () => {
   sectionIndex += 1;
   hideSections();
   addClassList(sections[sectionIndex], "show");
+  console.log(sectionIndex);
 };
 
 const prevSection = () => {
@@ -425,17 +463,12 @@ getStartedOutline.addEventListener("click", () => {
 // });
 
 nextButton.forEach((button) => {
-  button.addEventListener("click", () => {
-    if(firstName.value.length < 1 && lastName.value.length < 1) {
-      return false;
-    } else {
-      if (sectionIndex == 4) {
-        removeClassList(secondNavbar, "none");
-      }
-      window.scrollTo(0, 0);
-      welcomeMessage.innerText = `Good morning ${firstName.value}`;
-      nextSection();
-    }   
+  button.addEventListener("click", () => {    
+    if (sectionIndex == 4) {
+      removeClassList(secondNavbar, "none");
+    }
+    window.scrollTo(0, 0);    
+    nextSection(); 
     
   });
 });

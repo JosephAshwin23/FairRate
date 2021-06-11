@@ -14,6 +14,10 @@ button {
   @include button($color-btn-primary, $bright-sky-blue);
 }
 
+.btn-primary-form {
+  @include button($color-btn-primary, $bright-sky-blue);
+}
+
 .btn-secondary {
   @include button($color-btn-secondary, $steel-grey);
 }

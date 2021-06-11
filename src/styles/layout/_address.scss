@@ -35,15 +35,17 @@
   .right-side {
     width: 400px;
 
-    input {
+    .form-control {
       margin-bottom: 20px;
+    }
+
+    input {     
       &:nth-child(1) {
         @include input-img(location);
       }
 
       &:nth-child(2) {
-        @include input-img(mail);
-        display: block;
+        @include input-img(mail);       
       }
     }
 
