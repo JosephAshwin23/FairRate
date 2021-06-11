@@ -4,13 +4,13 @@
     h1 {
         margin-bottom: 40px;
     }
-       
+
     input {
         & + input {
             margin-left: 15px;
-        }       
-    } 
-    
+        }
+    }
+                
     .red-border {
         border-color: $danger;
     }

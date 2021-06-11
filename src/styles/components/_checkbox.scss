@@ -7,6 +7,8 @@
 
   .tick {
     @extend %checkbox-tick;
+    background: url(/src/icons/tick.svg) no-repeat center top 6px;
+    background-size: 350%;
   }
 
   .checkbox-text {
@@ -15,8 +17,9 @@
   }
 
   input:checked + .tick {
-    background: url(/src/icons/tick.svg) center top 6px / 60% no-repeat;
+    background-size: 60%;
     border-color: $color-btn-primary;
+    transition: background-size 0.15s ease-in;
   }
 }
 
@@ -27,9 +30,15 @@
   @extend %position-relative;
   @extend %checkbox-input;
 
+  &:hover {
+    box-shadow: rgba(35, 192, 245, 0.3) 0px 0px 24px;
+  }
+
   .tick {
     @extend %checkbox-tick;
     border-width: 2px;
+    background: url(/src/icons/tick.svg) no-repeat center top 4.5px;
+    background-size: 330%;
   }
 
   .checkbox-text {
@@ -38,7 +47,8 @@
   }
 
   input:checked + .tick {
-    background: url(/src/icons/tick.svg) center top 4.5px / 60% no-repeat;
+    background-size: 60%;
+    transition: background-size 0.15s ease-in;
   }
 }
 
@@ -50,9 +60,15 @@
   @extend %checkbox-input;
   border-radius: 3px;
 
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 24px;
+  }
+
   .tick {
     @extend %checkbox-tick;
     border: none;
+    background: url(/src/icons/check-white.svg) no-repeat left 2px top;
+    background-size: 220%;
   }
 
   .checkbox-text {
@@ -63,6 +79,7 @@
   }
 
   input:checked + .tick {
-    background: url(/src/icons/check-white.svg) left 2px top / 80% no-repeat;
+    background-size: 80%;
+    transition: background-size 0.15s ease-in;
   }
 }

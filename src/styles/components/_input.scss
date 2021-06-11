@@ -6,6 +6,10 @@ input[type='text'],input[type='email'] {
   &::placeholder {
     color: #adadad;
   }
+
+  &:focus {
+    box-shadow:rgba(35,192,245,0.2) 0px 0px 24px; 
+  }   
  
 }
 

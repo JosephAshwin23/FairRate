@@ -28,8 +28,8 @@ button {
 
 .btn-tertiary {
   @extend %btn-tertiary;
-  background: $color-btn-tertiary url("/src/icons/button-arrow.svg") no-repeat
-    right 10px center / 18px;  
+  background-color: $color-btn-primary;
+  background-image: url("/src/icons/button-arrow.svg");  
 
   &::after {
     @include position(absolute, 15%, 0);
@@ -46,8 +46,8 @@ button {
 
 .btn-tertiary-outline {
   @extend %btn-tertiary;
-  background: url("/src/icons/button-arrow-grey.svg") no-repeat right 10px
-    center / 18px;
+  background-color: transparent;
+  background-image: url("/src/icons/button-arrow-grey.svg");  
   border: 2px solid $light-blue-grey; 
   color: black;
   font-weight: 400;
@@ -57,6 +57,14 @@ button {
     @include width-height(40px, 70%);
     border-left: 2px solid $light-blue-grey;
   }
+
+  &:hover {
+   background-image: url("/src/icons/button-arrow-white.svg");
+   background-color: $color-btn-dark;
+   border-color: $color-btn-dark;
+   color: white;
+  }
+  
 }
 
 .btn-lg {

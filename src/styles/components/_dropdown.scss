@@ -3,6 +3,14 @@
   @extend %position-relative;
   padding: 10px;
   text-align: start;
+  
+  &:focus {
+    box-shadow:rgba(35,192,245,0.2) 0px 0px 24px; 
+  } 
+  
+  & > * {
+    @extend %cursor-pointer;
+  }
 
   &-list {
     @include position(absolute, 60px, 0);
@@ -10,9 +18,9 @@
 
   .dropdown-list {
     display: none;
-    z-index: 10;
+    z-index: 10;    
   }
-
+    
   .show {
     display: block;
   }
@@ -52,6 +60,9 @@
       background-color: #919eab;
     }
   }
+
+  
+
 }
 
 .dropdown-lg {
@@ -62,8 +73,7 @@
   width: 230px;
 }
 
-.scroll-icon {
-  @extend %cursor-pointer;
+.scroll-icon {  
   @extend %vertical-align;
   width: 10px;
   right: 10px;

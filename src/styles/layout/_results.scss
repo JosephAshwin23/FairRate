@@ -32,6 +32,7 @@
     margin: 20px auto 0 auto;
     border-spacing: 0;
     border-bottom: none;
+       
 
     thead {
       background: $pale-blue;
@@ -62,7 +63,7 @@
     }
 
     tbody {
-      background-color: white;
+      background-color: white;          
 
       tr {
         @extend %position-relative;

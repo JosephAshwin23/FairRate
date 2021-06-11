@@ -73,6 +73,46 @@ let resultData = [
     price: "$898.09",
     phone: "(887) 407 - 37123",
   },
+  {
+    pic: "https://ms-f7-sites-01-cdn.azureedge.net/docs/stories/740416-national-bank-of-canada-banking-microsoft365-blog/resources/1e9981b7-bfc3-47ee-8a47-b8aa5b643408/1134397030684923025_1134397030684923025",
+    nmsl: "7707",
+    intrest: "6.0% APR",
+    month: "March 10",
+    rate: "2.500% Rate",
+    point: "1 Point",
+    price: "$898.09",
+    phone: "(887) 407 - 37123",
+  },
+  {
+    pic: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Healthline_logo.svg/1200px-Healthline_logo.svg.png",
+    nmsl: "7707",
+    intrest: "3.1% APR",
+    month: "March 10",
+    rate: "3.500% Rate",
+    point: "1 Point",
+    price: "$898.09",
+    phone: "(887) 407 - 37123",
+  },
+  {
+    pic: "https://toppng.com/uploads/preview/rbs-logo-royal-bank-of-scotland-logo-11563385696idzaj9wbdz.png",
+    nmsl: "7707",
+    intrest: "2.6% APR",
+    month: "March 10",
+    rate: "3.500% Rate",
+    point: "1 Point",
+    price: "$898.09",
+    phone: "(887) 407 - 37123",
+  },
+  {
+    pic: "https://kingstonmortgagesolutions.com/wp-content/uploads/2016/12/B2B-Bank.png",
+    nmsl: "7707",
+    intrest: "3.9% APR",
+    month: "March 10",
+    rate: "3.500% Rate",
+    point: "1 Point",
+    price: "$898.09",
+    phone: "(887) 407 - 37123",
+  },
 ];
 
 let rateData = [
@@ -147,16 +187,19 @@ const nextButton = document.querySelectorAll(".btn-primary");
 const prevButton = document.querySelectorAll(".btn-secondary");
 const nextDarkButton = document.querySelectorAll(".btn-dark");
 const getStartedBlue = document.querySelector(".btn-tertiary");
-const getStartedOutline = document.querySelector( ".dashboard .btn-tertiary-outline");
+const getStartedOutline = document.querySelector(
+  ".dashboard .btn-tertiary-outline"
+);
 const fileInput = document.getElementById("file-upload");
 const uploadFiles = document.getElementById("upload-files");
 const logo = document.querySelector(".logo");
 const identification = document.querySelector(".identification");
 const dateInput = document.getElementById("datepicker");
 const applicationEdit = document.getElementById("application-edit");
+const paginationNext = document.getElementById('pagination-next');
+const paginationPrev = document.getElementById('pagination-prev');
 
 // functions
-
 
 const uploadingFiles = (Array) => {
   Array.forEach((file) => {
@@ -178,29 +221,82 @@ const uploadingFiles = (Array) => {
   });
 };
 
+const ResultTableLoop = (start,stop) => {
+  for( let i = start; i < stop; i ++) {
+    resultTable.innerHTML += resultItems(resultData[i]); 
+  }
+}
+
+const resultItems = (data) => {
+  return `
+  <tr>
+  <td>
+    <img
+      class="lender-img"
+      src= ${data.pic}
+      alt=""
+    />
+    <p>NMLS ID: ${data.nmsl}</p>
+  </td>
+  <td>
+    <h2>${data.intrest}</h2>
+    <p>${data.month}</p>
+    <p>30 Rate Lock</p>
+  </td>
+  <td>
+    <h5>${data.rate}</h5>
+    <p>${data.point}</p>
+    <p>30 Rate Lock</p>
+  </td>
+  <td>
+    <h2>${data.price}</h2>
+    <p>${data.point}</p>
+    <p>30 Rate Lock</p>
+  </td>
+  <td>
+    <h5>${data.phone}</h5>
+    <p>Toll-free, no obligations</p>
+  </td>
+  <td>
+    <button class="btn-dark btn-sm">next</button>
+  </td>
+  </tr>    
+  `
+}
+
+
 const dropDown = (id) => {
-  document.querySelector(`#dropdown-${id}`).addEventListener("click", () => {
-    document
-      .querySelector(`#dropdown-${id} .dropdown-list`)
-      .classList.toggle("show");
+  const dropDownParent = document.querySelector(`#dropdown-${id}`);
+  const dropDownList = document.querySelector(`#dropdown-${id} .dropdown-list`);
+  const dropDownItems = document.querySelectorAll(`#dropdown-${id} li`);
+  const dropDownText = document.querySelector(`#dropdown-${id} p`);
+
+  dropDownParent.addEventListener("click", () => {
+    dropDownList.classList.toggle("show");
   });
 
-  document.querySelectorAll(`#dropdown-${id} li`).forEach((li) => {
+  dropDownItems.forEach((li) => {
     li.addEventListener("click", () => {
-      document.querySelector(`#dropdown-${id} p`).innerText = li.innerText;
-      document
-        .querySelector(`#dropdown-${id} .dropdown-list`)
-        .classList.add("show");
+      dropDownText.innerText = li.innerText;
+      addClassList(dropDownList,'show');
     });
+  });
+
+  document.addEventListener("click", function (event) {
+    var isClickInsideElement = dropDownParent.contains(event.target);
+    if (!isClickInsideElement) {
+      removeClassList(dropDownList,'show')
+    }
   });
 };
 
-const hideSections = () =>  sections.forEach((section) => section.classList.remove("show"));
+const hideSections = () =>
+  sections.forEach((section) => section.classList.remove("show"));
 
-const addClassList = (element,ClassName) => element.classList.add(ClassName);
+const addClassList = (element, ClassName) => element.classList.add(ClassName);
 
-const removeClassList = (element,ClassName) => element.classList.remove(ClassName);
-
+const removeClassList = (element, ClassName) =>
+  element.classList.remove(ClassName);
 
 // window reload
 
@@ -212,53 +308,27 @@ logo.addEventListener("click", () => {
 
 navbarLink.forEach((link) => {
   link.addEventListener("click", () => {
-    navbarLink.forEach((li) => removeClassList(li,'focus') );    
-    addClassList(link,'focus')
+    navbarLink.forEach((li) => removeClassList(li, "focus"));
+    addClassList(link, "focus");
   });
 });
 
 // load results
 
-resultData.forEach((data) => {
-  const clickme = (e) => {
-    console.log(e.target);
-  };
-  resultTable.innerHTML += `
-<tr>
-<td>
-  <img
-    class="lender-img"
-    src= ${data.pic}
-    alt=""
-  />
-  <p>NMLS ID: ${data.nmsl}</p>
-</td>
-<td>
-  <h2>${data.intrest}</h2>
-  <p>${data.month}</p>
-  <p>30 Rate Lock</p>
-</td>
-<td>
-  <h5>${data.rate}</h5>
-  <p>${data.point}</p>
-  <p>30 Rate Lock</p>
-</td>
-<td>
-  <h2>${data.price}</h2>
-  <p>${data.point}</p>
-  <p>30 Rate Lock</p>
-</td>
-<td>
-  <h5>${data.phone}</h5>
-  <p>Toll-free, no obligations</p>
-</td>
-<td>
-  <button class="btn-dark btn-sm">next</button>
-</td>
-</tr>
+ResultTableLoop(0,7);
 
-`;
-});
+paginationNext.addEventListener('click', () => {
+  resultTable.innerHTML = '';
+  ResultTableLoop(7,resultData.length);
+  
+})
+
+paginationPrev.addEventListener('click', () => {
+  resultTable.innerHTML = '';
+  ResultTableLoop(0,7);
+ 
+})
+
 
 // load rates
 
@@ -299,31 +369,31 @@ const nextSection = () => {
   sectionIndex = sectionIndex === 6 ? (sectionIndex = 0) : sectionIndex;
   sectionIndex += 1;
   hideSections();
-  addClassList(sections[sectionIndex],'show');   
+  addClassList(sections[sectionIndex], "show");
 };
 
 const prevSection = () => {
   sectionIndex -= 1;
   hideSections();
-  addClassList(sections[sectionIndex],'show'); 
+  addClassList(sections[sectionIndex], "show");
 };
 
 getStartedOutline.addEventListener("click", () => {
   window.location.reload();
 });
 
-nextDarkButton.forEach((button) => {
-  button.addEventListener("click", nextSection);
-});
+// nextDarkButton.forEach((button) => {
+//   button.addEventListener("click", nextSection);  
+// });
 
 nextButton.forEach((button) => {
   button.addEventListener("click", () => {
     if (firstName.value === "" || lastName.value === "") {
-      nameInputs.forEach((input) => addClassList(input,'red-border'));
+      nameInputs.forEach((input) => addClassList(input, "red-border"));
       alert("Enter required Fields");
     } else {
       if (sectionIndex == 4) {
-        removeClassList(secondNavbar,'none');       
+        removeClassList(secondNavbar, "none");
       }
       window.scrollTo(0, 0);
       welcomeMessage.innerText = `Good morning ${firstName.value}`;
@@ -334,15 +404,15 @@ nextButton.forEach((button) => {
 
 getStartedBlue.addEventListener("click", () => {
   if (sectionIndex == 5) {
-    addClassList(secondNavbar,'none');
+    addClassList(secondNavbar, "none");
   }
   nextSection();
 });
 
 applicationEdit.addEventListener("click", () => {
   hideSections();
-  addClassList(sections[1],'show') 
-  addClassList(secondNavbar,'none')
+  addClassList(sections[1], "show");
+  addClassList(secondNavbar, "none");
   sectionIndex = 1;
 });
 
@@ -354,11 +424,14 @@ getStartedBlue.addEventListener("click", () => {
   loginName.innerText = `${firstName.value} ${lastName.value}`;
 });
 
-$("body").on("click", "#result-table button", nextSection);
+$("body").on("click", "#result-table button", () => {
+  nextSection();
+  window.scrollTo(0, 0);
+});
 
 uploadTab.forEach((tab) => {
   tab.addEventListener("click", () => {
-    uploadTab.forEach((tab) => removeClassList(tab,'focus'));
+    uploadTab.forEach((tab) => removeClassList(tab, "focus"));
     tab.classList.toggle("focus");
   });
 });
@@ -377,12 +450,12 @@ $("#datepicker").datepicker();
 
 // navigate upload tab
 
-uploadTab[1].addEventListener("click", () => {  
-  addClassList(identification,'hide');
+uploadTab[1].addEventListener("click", () => {
+  addClassList(identification, "hide");
 });
 
 uploadTab[0].addEventListener("click", () => {
-  removeClassList(identification,'hide');
+  removeClassList(identification, "hide");
 });
 
 // control slider
@@ -407,8 +480,8 @@ function applyFill(slider) {
 
 const initApp = () => {
   const droparea = document.getElementById("drag-drop");
-  const active = () => addClassList(droparea,'green-border');
-  const inactive = () => removeClassList(droparea,'green-border');
+  const active = () => addClassList(droparea, "green-border");
+  const inactive = () => removeClassList(droparea, "green-border");
   const prevents = (e) => e.preventDefault();
   ["dragenter", "dragover", "dragleave", "drop"].forEach((evtName) => {
     droparea.addEventListener(evtName, prevents);
@@ -451,6 +524,3 @@ fileInput.onchange = function (event) {
     uploadingFiles(fileListArray);
   }
 };
-
-
-

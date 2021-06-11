@@ -81,14 +81,11 @@
   <main>
     <section class="choose-name show">
       <h1>I'll get you an awesome price <br> in seconds. Ready to go?</h1>
-      <form action="">
-        <input type="text" id="first-name" autocomplete="off"  class=" input-md" placeholder="First Name">
-        <input type="text" id="last-name" autocomplete="off" class=" input-md" placeholder="Last Name">
-        <button type="button" class="btn-primary btn-lg">next</button>
-      </form>
-
-
-
+      <form action="">       
+          <input type="text" id="first-name" autocomplete="off"  class=" input-md" placeholder="First Name">  
+          <input type="text" id="last-name" autocomplete="off" class=" input-md" placeholder="Last Name">       
+          <button type="button" class="btn-primary btn-lg">next</button>
+      </form>     
     </section>
 
     <section class="address">
@@ -133,11 +130,11 @@
               </div>
             </div>
 
-            <div id="dropdown-month" class="dropdown dropdown-lg">
+            <div tabindex="0" id="dropdown-month" class="dropdown dropdown-lg">
               <p class="dropdown-text">I don’t know</p>
-              <img tabindex="1" id="scroll" class="scroll-icon" src="../src/icons/updown.svg" alt="scoll-icon" />
+              <img  id="scroll" class="scroll-icon" src="../src/icons/updown.svg" alt="scoll-icon" />
               <div class="dropdown-list">
-                <ul>
+                <ul >
                   <li>This month</li>
                   <li>Next Month</li>
                   <li>December 2018</li>
@@ -261,7 +258,7 @@
       <h1>Your fairest results</h1>
       <h3>16 Results for 30 years xied in 64117</h3>
       <div class="filter">
-        <div id="dropdown-years" class="dropdown dropdown-md">
+        <div tabindex="0" id="dropdown-years" class="dropdown dropdown-md">
           <p class="dropdown-text">15 Years</p>
           <img id="scroll" tabindex="1" class="scroll-icon" src="../src/icons/updown.svg" alt="">
           <div class="dropdown-list">
@@ -276,9 +273,9 @@
           </div>
 
         </div>
-        <div id="dropdown-price" class="dropdown dropdown-md">
+        <div tabindex="0" id="dropdown-price" class="dropdown dropdown-md">
           <p class="dropdown-text">Fixed Price</p>
-          <img id="scroll" tabindex="1" class="scroll-icon" src="../src/icons/updown.svg" alt="">
+          <img id="scroll" class="scroll-icon" src="../src/icons/updown.svg" alt="">
           <div class="dropdown-list">
             <ul>
               <li>variable price</li>
@@ -291,9 +288,9 @@
 
         <button class="btn-success btn-md">Filter Results</button>
 
-        <div id="dropdown-sort" class="dropdown dropdown-md">
+        <div tabindex="0" id="dropdown-sort" class="dropdown dropdown-md">
           <p class="dropdown-text">Sort by: Fairest</p>
-          <img id="scroll" tabindex="1" class="scroll-icon" src="../src/icons/updown.svg" alt="scroll-icon">
+          <img id="scroll"  class="scroll-icon" src="../src/icons/updown.svg" alt="scroll-icon">
           <div class="dropdown-list">
             <ul>
               <li>Highest</li>
@@ -332,7 +329,7 @@
 
       </table>
       <footer>
-        <a tabindex="0">
+        <a id="pagination-prev" tabindex="0">
           <svg class="nav-arrows" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="20" height="20" x="0" y="0" viewBox="0 0 512 512"
             style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
@@ -348,7 +345,7 @@
             </g>
           </svg>
         </a>
-        <a tabindex="0">
+        <a id="pagination-next" tabindex="0">
           <svg class="nav-arrows" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="20" height="20" x="0" y="0" viewBox="0 0 512 512"
             style="enable-background:new 0 0 512 512" xml:space="preserve">
@@ -410,22 +407,22 @@
         <div class="advanced">
           <div class="wrapper">
             <div class="fixed">
-              <label class="checkbox-secondary">
+              <label tabindex="0" class="checkbox-secondary">
                 <input type="checkbox" />
                 <span class="tick"></span>
                 <span class="checkbox-text">Fixed</span>
               </label>
-              <label class="checkbox-tertiary color-green">
+              <label tabindex="0" class="checkbox-tertiary color-green">
                 <input type="checkbox" checked />
                 <span class="tick"></span>
                 <span class="checkbox-text">15 Years</span>
               </label>
-              <label class="checkbox-tertiary color-light-blue">
+              <label tabindex="0" class="checkbox-tertiary color-light-blue">
                 <input type="checkbox" checked />
                 <span class="tick"></span>
                 <span class="checkbox-text">20 Years</span>
               </label>
-              <label class="checkbox-tertiary color-navy-blue">
+              <label tabindex="0" class="checkbox-tertiary color-navy-blue">
                 <input type="checkbox" checked />
                 <span class="tick"></span>
                 <span class="checkbox-text">30 Years</span>

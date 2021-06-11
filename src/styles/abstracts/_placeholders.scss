@@ -96,6 +96,14 @@
   text-transform: initial;
   font-weight: 100;
   padding: 12px 55px 12px 10px;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+
+  &:focus {
+    background-position: right -16px center;
+    transition: 0.1s ease-in;
+  }
 }
 
 %triangle{
